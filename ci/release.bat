@@ -18,7 +18,7 @@ REM echo "Deleting release from github before creating new one"
 REM github-release delete --user ${GITHUB_ORGANIZATION} --repo ${GITHUB_REPO} --tag ${VERSION_NAME}
 
 echo "Creating a new release in github"
-%GITHUB_RELEASE_PATH% release --user rorazoro --repo %RELEASE_REPO% --tag %RELEASE_TAG% --name %RELEASE_NAME%
+"%GITHUB_RELEASE_PATH%" release --user rorazoro --repo "%RELEASE_REPO%" --tag "%RELEASE_TAG%" --name "%RELEASE_NAME%"
 
 echo "Uploading the artifacts into github"
-%GITHUB_RELEASE_PATH% upload --user rorazoro --repo %RELEASE_REPO% --tag %RELEASE_TAG% --name %RELEASE_NAME% --file "%ARTIFACTS%\\Builds\\**"
+%GITHUB_RELEASE_PATH% upload --user rorazoro --repo "%RELEASE_REPO%" --tag "%RELEASE_TAG%" --name "%RELEASE_NAME%" --file "%ARTIFACTS%\\Builds\\**"
