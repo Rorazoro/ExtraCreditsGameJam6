@@ -57,12 +57,12 @@ pipeline {
     TEST_RESULTS = "${WORKSPACE}\\_testResults"
   }
   post {
-    always {
-      discordSend(webhookURL: 'https://discordapp.com/api/webhooks/737767932918104244/5Wy_1Jf037_0s4oD90yTeSLKsvchGr0PWBkibVlTOT9003GgWhaREgjt9_D9twvtTGaC', title: JOB_NAME, description: "${currentBuild.currentResult}", link: env.BUILD_URL, result: currentBuild.currentResult)
-      dir("${TEST_RESULTS}") {
-        nunit testResultsPattern: '**'
-      }
-    }
+    // always {
+    //   discordSend(webhookURL: 'https://discordapp.com/api/webhooks/737767932918104244/5Wy_1Jf037_0s4oD90yTeSLKsvchGr0PWBkibVlTOT9003GgWhaREgjt9_D9twvtTGaC', title: JOB_NAME, description: "${currentBuild.currentResult}", link: env.BUILD_URL, result: currentBuild.currentResult)
+    //   dir("${TEST_RESULTS}") {
+    //     nunit testResultsPattern: '**'
+    //   }
+    // }
     success {
       dir("${ARTIFACTS}") {
         archiveArtifacts artifacts: '**'
