@@ -48,11 +48,11 @@ pipeline {
     }
   }
   environment {
-    UNITY_CREDS = credentials('UnityCredentials')
-    UNITY_LICENSE_CONTENT = credentials('UnityLicenseFile')
-    UNITY_ACTIVATED = 'true'
+    //UNITY_CREDS = credentials('UnityCredentials')
+    //UNITY_LICENSE_CONTENT = credentials('UnityLicenseFile')
+    //UNITY_ACTIVATED = 'true'
     UNITY_PATH = 'D:\\Program Files\\Unity Editors\\2020.1.2f1\\Editor\\Unity.exe'
-    BUILD_NAME = 'ProjectCoopPuzzleDungeon'
+    BUILD_NAME = 'ExtraCreditsGameJam6'
     ARTIFACTS = "${WORKSPACE}\\_artifacts"
     TEST_RESULTS = "${WORKSPACE}\\_testResults"
   }
