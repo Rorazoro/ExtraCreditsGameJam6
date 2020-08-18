@@ -74,8 +74,8 @@ pipeline {
     success {
       dir("${ARTIFACTS}") {
         archiveArtifacts artifacts: '**'
-        bat 'ci/release.bat'
       }
+      bat 'ci/release.bat'
     }
   }
 }
