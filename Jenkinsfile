@@ -57,7 +57,7 @@ pipeline {
     GITHUB_RELEASE_PATH = 'D:\\Jenkins\\github-release.exe'
     RELEASE_REPO = 'ExtraCreditsGameJam6'
     RELEASE_TAG = 'v0.1'
-    RELEASE_NAME = 'Extra Credits Game Jam #6'
+    RELEASE_NAME = 'Extra Credits Game Jam 6'
     RELEASE_DESC = 'Test Release'
     
     GITHUB_TOKEN = credentials('github')
