@@ -59,6 +59,11 @@ pipeline {
           }
         }
       }
+      post {
+        always {
+          deleteDir()
+        }
+      }
     }
     stage('Release and Archive') {
       agent {
@@ -83,8 +88,12 @@ pipeline {
           }
         }
       }
+      post {
+        always {
+          deleteDir()
+        }
+      }
     }
-    
   }
   environment {
     UNITY_PATH = 'D:\\Program Files\\Unity Editors\\2020.1.2f1\\Editor\\Unity.exe'
@@ -92,10 +101,5 @@ pipeline {
     
     ARTIFACTS = "${WORKSPACE}\\_artifacts"
     TEST_RESULTS = "${WORKSPACE}\\_testResults"
-  }
-  post {
-    always {
-      deleteDir()
-    }
   }
 }
