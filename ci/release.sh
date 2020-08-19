@@ -18,9 +18,9 @@ export RELEASE_FILES="
 "
 
 ci/github_release_manager.sh \
-    -l rorazoro \
-    -t ${GITHUB_TOKEN} \
-    -o rorazoro \
+    -l ${GITHUB_CREDS_USR} \
+    -t ${GITHUB_CREDS_PSW} \
+    -o Rorazoro \
     -r ExtraCreditsGameJam6 \
     -d v$TAG_MAJOR.$TAG_MINOR.$TAG_PATCH \
     -c upload ${RELEASE_FILES}

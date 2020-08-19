@@ -67,7 +67,7 @@ pipeline {
       stages {
         stage('Prepare Environment') {
           steps {
-            sh "git config user.name 'Rorazoro'"
+            sh "git config user.name '${GITHUB_CREDS_USR}'"
             sh "git config user.email 'rorazoro@gmail.com'"
           }
         }
@@ -112,7 +112,7 @@ pipeline {
     // RELEASE_NAME = 'Extra Credits Game Jam 6'
     // RELEASE_DESC = 'Test Release'
     
-    GITHUB_TOKEN = credentials('GithubAccessKey')
+    GITHUB_CREDS = credentials('github')
     // GITHUB_API = "https://api.github.com"
     TAG_MAJOR = 0
     TAG_MINOR = 1
