@@ -61,6 +61,7 @@ pipeline {
     RELEASE_DESC = 'Test Release'
     
     GITHUB_TOKEN = credentials('github')
+    GITHUB_API = "https://api.github.com"
     ARTIFACTS = "${WORKSPACE}\\_artifacts"
     TEST_RESULTS = "${WORKSPACE}\\_testResults"
   }
