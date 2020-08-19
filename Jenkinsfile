@@ -65,22 +65,11 @@ pipeline {
         label 'master'
       }
       stages {
-        stage('Prepare Environment') {
-          steps {
-            sh "git config user.name 'rorazoro'"
-            sh "git config user.email 'rorazoro@gmail.com'"
-          }
-        }
         stage('Unstash Files') {
           steps{
             dir("${ARTIFACTS}") {
               unstash "artifacts"
             }
-          }
-        }
-        stage('Release') {
-          steps{
-            sh 'ci/release.sh'
           }
         }
         stage('Archive Artifacts') {
@@ -91,8 +80,6 @@ pipeline {
             dir("${ARTIFACTS}") {
               archiveArtifacts artifacts: '**'
             }
-            sh "git config --unset user.name"
-            sh "git config --unset user.email"
           }
         }
       }
@@ -100,35 +87,15 @@ pipeline {
     
   }
   environment {
-    //UNITY_CREDS = credentials('UnityCredentials')
-    //UNITY_LICENSE_CONTENT = credentials('UnityLicenseFile')
-    //UNITY_ACTIVATED = 'true'
     UNITY_PATH = 'D:\\Program Files\\Unity Editors\\2020.1.2f1\\Editor\\Unity.exe'
     BUILD_NAME = 'ExtraCreditsGameJam6'
-
-    // GITHUB_RELEASE_PATH = 'D:\\Jenkins\\github-release.exe'
-    // RELEASE_REPO = 'ExtraCreditsGameJam6'
-    // RELEASE_TAG = 'v0.1'
-    // RELEASE_NAME = 'Extra Credits Game Jam 6'
-    // RELEASE_DESC = 'Test Release'
     
-    GITHUB_TOKEN = credentials('GithubAccessKey')
-    // GITHUB_API = "https://api.github.com"
-    TAG_MAJOR = 0
-    TAG_MINOR = 1
-    TAG_PATCH = 0
     ARTIFACTS = "${WORKSPACE}\\_artifacts"
     TEST_RESULTS = "${WORKSPACE}\\_testResults"
   }
- //post {
-    // always {
-    //   discordSend(webhookURL: 'https://discordapp.com/api/webhooks/737767932918104244/5Wy_1Jf037_0s4oD90yTeSLKsvchGr0PWBkibVlTOT9003GgWhaREgjt9_D9twvtTGaC', title: JOB_NAME, description: "${currentBuild.currentResult}", link: env.BUILD_URL, result: currentBuild.currentResult)
-    //   dir("${TEST_RESULTS}") {
-    //     nunit testResultsPattern: '**'
-    //   }
-    // }
-  //   success {
-
-  //   }
-  // }
+  post {
+    always {
+      deleteDir()
+    }
+  }
 }
