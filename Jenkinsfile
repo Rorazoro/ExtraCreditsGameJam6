@@ -67,8 +67,8 @@ pipeline {
       stages {
         stage('Prepare Environment') {
           steps {
-            sh "git config user.name 'Jenkins' &&
-                git config user.email 'jenkins@email.org'"
+            sh "git config user.name 'Jenkins'"
+            sh "git config user.email 'jenkins@email.org'"
           }
         }
         stage('Unstash Files') {
@@ -91,8 +91,8 @@ pipeline {
             dir("${ARTIFACTS}") {
               archiveArtifacts artifacts: '**'
             }
-            sh "git config --unset user.name &&
-                git config --unset user.email"
+            sh "git config --unset user.name"
+            sh "git config --unset user.email"
           }
         }
       }
