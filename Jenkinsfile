@@ -112,7 +112,7 @@ pipeline {
     // RELEASE_NAME = 'Extra Credits Game Jam 6'
     // RELEASE_DESC = 'Test Release'
     
-    GITHUB_TOKEN = credentials('github')
+    GITHUB_TOKEN = credentials('GithubAccessKey')
     // GITHUB_API = "https://api.github.com"
     TAG_MAJOR = 0
     TAG_MINOR = 1
