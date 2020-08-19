@@ -6,7 +6,6 @@ pipeline {
     stage('Prepare Environment') {
       steps {
         bat 'mkdir %ARTIFACTS%'
-        bat 'mkdir %ARTIFACTS%\\Builds'
       }
     }
     // stage('Run Tests') {
