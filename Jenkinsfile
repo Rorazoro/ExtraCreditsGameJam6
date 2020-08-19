@@ -12,26 +12,26 @@ pipeline {
             bat 'mkdir %ARTIFACTS%\\Builds'
           }
         }
-        stage('Run Tests') {
-          stages {
-            stage('Test: EditMode') {
-              environment {
-                TEST_PLATFORM = 'EditMode'
-              }
-              steps {
-                bat 'ci/test.bat'
-              }
-            }
-            stage('Test: PlayMode') {
-              environment {
-                TEST_PLATFORM = 'PlayMode'
-              }
-              steps {
-                bat 'ci/test.bat'
-              }
-            }
-          }
-        }
+        // stage('Run Tests') {
+        //   stages {
+        //     stage('Test: EditMode') {
+        //       environment {
+        //         TEST_PLATFORM = 'EditMode'
+        //       }
+        //       steps {
+        //         bat 'ci/test.bat'
+        //       }
+        //     }
+        //     stage('Test: PlayMode') {
+        //       environment {
+        //         TEST_PLATFORM = 'PlayMode'
+        //       }
+        //       steps {
+        //         bat 'ci/test.bat'
+        //       }
+        //     }
+        //   }
+        // }
         stage('Run Builds') {
           stages {
             stage('Build: StandaloneWindows64') {
@@ -55,9 +55,9 @@ pipeline {
         }
         stage('Archive Artifacts') {
           steps{
-            dir("${TEST_RESULTS}") {
-              nunit testResultsPattern: '**'
-            }
+            // dir("${TEST_RESULTS}") {
+            //   nunit testResultsPattern: '**'
+            // }
             dir("${ARTIFACTS}") {
               archiveArtifacts artifacts: '**'
             }
