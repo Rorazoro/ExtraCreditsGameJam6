@@ -76,10 +76,12 @@ pipeline {
     //   }
     // }
     success {
-      dir("${ARTIFACTS}") {
+      node ('master') {
+        dir("${ARTIFACTS}") {
         archiveArtifacts artifacts: '**'
       }
       sh 'ci/release.sh'
+      }
     }
   }
 }
