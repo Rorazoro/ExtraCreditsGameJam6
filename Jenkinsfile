@@ -65,6 +65,12 @@ pipeline {
         label 'master'
       }
       stages {
+        stage('Prepare Environment') {
+          steps {
+            sh "git config user.name 'Jenkins' &&
+                git config user.email 'jenkins@email.org'"
+          }
+        }
         stage('Unstash Files') {
           steps{
             dir("${ARTIFACTS}") {
@@ -79,9 +85,14 @@ pipeline {
         }
         stage('Archive Artifacts') {
           steps{
+            dir("${TEST_RESULTS}") {
+              nunit testResultsPattern: '**'
+            }
             dir("${ARTIFACTS}") {
               archiveArtifacts artifacts: '**'
             }
+            sh "git config --unset user.name &&
+                git config --unset user.email"
           }
         }
       }
