@@ -67,8 +67,8 @@ pipeline {
       stages {
         stage('Prepare Environment') {
           steps {
-            sh "git config user.name 'Jenkins'"
-            sh "git config user.email 'jenkins@email.org'"
+            sh "git config user.name 'Rorazoro'"
+            sh "git config user.email 'rorazoro@gmail.com'"
           }
         }
         stage('Unstash Files') {
