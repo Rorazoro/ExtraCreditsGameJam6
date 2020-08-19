@@ -18,8 +18,8 @@ export RELEASE_FILES="
 "
 
 ci/github_release_manager.sh \
-    -l ${GITHUB_CREDS_USR} \
-    -t ${GITHUB_CREDS_PSW} \
+    -l Rorazoro \
+    -t ${GITHUB_TOKEN} \
     -o Rorazoro \
     -r ExtraCreditsGameJam6 \
     -d v$TAG_MAJOR.$TAG_MINOR.$TAG_PATCH \
