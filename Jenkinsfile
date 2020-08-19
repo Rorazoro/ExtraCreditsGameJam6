@@ -1,98 +1,92 @@
 pipeline {
   agent none
   stages {
-    stage('Prepare Environment') {
-      agent {
-        label 'Unity-Windows'
-      }
-      steps {
-        bat 'mkdir %ARTIFACTS%'
-        bat 'mkdir %ARTIFACTS%\\Builds'
-      }
-    }
-    stage('Run Tests') {
+    stage('Test and Build') {
       agent {
         label 'Unity-Windows'
       }
       stages {
-        stage('Test: EditMode') {
-          environment {
-            TEST_PLATFORM = 'EditMode'
-          }
+        stage('Prepare Environment') {
           steps {
-            bat 'ci/test.bat'
+            bat 'mkdir %ARTIFACTS%'
+            bat 'mkdir %ARTIFACTS%\\Builds'
           }
         }
-        stage('Test: PlayMode') {
-          environment {
-            TEST_PLATFORM = 'PlayMode'
-          }
-          steps {
-            bat 'ci/test.bat'
-          }
-        }
-      }
-    }
-    stage('Run Builds') {
-      agent {
-        label 'Unity-Windows'
-      }
-      stages {
-        stage('Build: StandaloneWindows64') {
-          environment {
-            BUILD_TARGET = 'StandaloneWindows64'
-          }
-          steps {
-            bat 'ci/build.bat'
+        stage('Run Tests') {
+          stages {
+            stage('Test: EditMode') {
+              environment {
+                TEST_PLATFORM = 'EditMode'
+              }
+              steps {
+                bat 'ci/test.bat'
+              }
+            }
+            stage('Test: PlayMode') {
+              environment {
+                TEST_PLATFORM = 'PlayMode'
+              }
+              steps {
+                bat 'ci/test.bat'
+              }
+            }
           }
         }
+        stage('Run Builds') {
+          stages {
+            stage('Build: StandaloneWindows64') {
+              environment {
+                BUILD_TARGET = 'StandaloneWindows64'
+              }
+              steps {
+                bat 'ci/build.bat'
+              }
+            }
 
-        stage('Build: StandaloneLinux64') {
-          environment {
-            BUILD_TARGET = 'StandaloneLinux64'
+            stage('Build: StandaloneLinux64') {
+              environment {
+                BUILD_TARGET = 'StandaloneLinux64'
+              }
+              steps {
+                bat 'ci/build.bat'
+              }
+            }
           }
-          steps {
-            bat 'ci/build.bat'
+        }
+        stage('Stash Files') {
+          steps{
+            stash name: "artifacts", includes: "${ARTIFACTS}/*"
           }
         }
       }
     }
-    stage('Stash Files') {
-      agent {
-        label 'Unity-Windows'
-      }
-      steps{
-        stash name: "artifacts", includes: "${ARTIFACTS}/*"
-      }
-    }
-    stage('Unstash Files') {
+    stage('Release and Archive') {
       agent {
         label 'master'
       }
-      steps{
-        dir("${ARTIFACTS}") {
-          unstash "artifacts"
+      stages {
+        stage('Unstash Files') {
+          steps{
+            dir("${ARTIFACTS}") {
+              unstash "artifacts"
+            }
+          }
+        }
+        stage('Release') {
+          steps{
+            sh 'ci/release.sh'
+          }
+        }
+        stage('Archive Artifacts') {
+          steps{
+            dir("${ARTIFACTS}") {
+              archiveArtifacts artifacts: '**'
+            }
+          }
         }
       }
     }
-    stage('Release') {
-      agent {
-        label 'master'
-      }
-      steps{
-        sh 'ci/release.sh'
-      }
-    }
-    stage('Archive Artifacts') {
-      agent {
-        label 'master'
-      }
-      steps{
-        dir("${ARTIFACTS}") {
-          archiveArtifacts artifacts: '**'
-        }
-      }
-    }
+    
   }
   environment {
     //UNITY_CREDS = credentials('UnityCredentials')
