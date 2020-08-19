@@ -75,7 +75,7 @@ pipeline {
     UNITY_PATH = 'D:\\Program Files\\Unity Editors\\2020.1.2f1\\Editor\\Unity.exe'
     BUILD_NAME = 'ExtraCreditsGameJam6'
     
-    ARTIFACTS = "${WORKSPACE}\\_artifacts"
-    TEST_RESULTS = "${WORKSPACE}\\_testResults"
+    ARTIFACTS = "%WORKSPACE%\\_artifacts"
+    TEST_RESULTS = "%WORKSPACE%\\_testResults"
   }
 }
