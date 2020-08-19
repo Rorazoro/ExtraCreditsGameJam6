@@ -53,30 +53,6 @@ pipeline {
             }
           }
         }
-        stage('Stash Files') {
-          steps{
-            stash name: "artifacts", includes: "${ARTIFACTS}/*"
-          }
-        }
-      }
-      post {
-        always {
-          deleteDir()
-        }
-      }
-    }
-    stage('Release and Archive') {
-      agent {
-        label 'master'
-      }
-      stages {
-        stage('Unstash Files') {
-          steps{
-            dir("${ARTIFACTS}") {
-              unstash "artifacts"
-            }
-          }
-        }
         stage('Archive Artifacts') {
           steps{
             dir("${TEST_RESULTS}") {
