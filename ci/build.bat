@@ -1,6 +1,8 @@
 set BUILD_PATH=%WORKSPACE%\Builds\%BUILD_TARGET%
 set ZIP_PATH="D:\Program Files\7-Zip\7z.exe"
 
+mkdir %BUILD_PATH%
+
 echo "Building for "%BUILD_TARGET%
 "%UNITY_PATH%" ^
 -quit ^
