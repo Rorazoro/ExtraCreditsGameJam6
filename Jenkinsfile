@@ -67,9 +67,9 @@ pipeline {
     ARTIFACTS = "${WORKSPACE}\\_artifacts"
     TEST_RESULTS = "${WORKSPACE}\\_testResults"
   }
-  // post {
-  //   always {
-  //     deleteDir()
-  //   }
-  // }
+  post {
+    always {
+      deleteDir()
+    }
+  }
 }
