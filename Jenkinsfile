@@ -30,6 +30,15 @@ pipeline {
     // }
     stage('Run Builds') {
       stages {
+        stage('Build: WebGL') {
+          environment {
+            BUILD_TARGET = 'WebGL'
+          }
+          steps {
+            bat 'ci/build.bat'
+          }
+        }
+
         stage('Build: StandaloneWindows64') {
           environment {
             BUILD_TARGET = 'StandaloneWindows64'
