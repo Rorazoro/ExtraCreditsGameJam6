@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="ParameterPreset" id="{0640191d-d396-4b03-90c3-01656101a10f}">
+		<property name="name">
+			<value>FootstepVolume</value>
+		</property>
+		<relationship name="folder">
+			<destination>{6723238c-0e79-4ac0-b660-5b56ce298ecc}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{79af5973-501c-4b31-bedf-ad3c3e169484}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{79af5973-501c-4b31-bedf-ad3c3e169484}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

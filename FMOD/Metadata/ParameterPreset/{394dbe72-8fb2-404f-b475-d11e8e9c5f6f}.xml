@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="ParameterPreset" id="{394dbe72-8fb2-404f-b475-d11e8e9c5f6f}">
+		<property name="name">
+			<value>CutVolume</value>
+		</property>
+		<relationship name="folder">
+			<destination>{6723238c-0e79-4ac0-b660-5b56ce298ecc}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{c534e5ec-f16a-4928-891e-3f6e629ebf0a}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{c534e5ec-f16a-4928-891e-3f6e629ebf0a}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
