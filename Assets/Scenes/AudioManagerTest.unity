@@ -1003,8 +1003,6 @@ GameObject:
   - component: {fileID: 511187246}
   - component: {fileID: 511187245}
   - component: {fileID: 511187244}
-  - component: {fileID: 511187249}
-  - component: {fileID: 511187248}
   m_Layer: 0
   m_Name: GameAudioMaster
   m_TagString: Untagged
@@ -1075,10 +1073,8 @@ MonoBehaviour:
   SFXSlider: {fileID: 89886549}
   ambience: {fileID: 511187245}
   music: {fileID: 511187244}
-  reverbTime: {fileID: 511187249}
-  reverbWet: {fileID: 511187248}
-  ReverbTime: 0.64
-  ReverbWet: 0.84
+  ReverbTime: 0.25
+  ReverbWet: 0.7
 --- !u!4 &511187247
 Transform:
   m_ObjectHideFlags: 0
@@ -1093,38 +1089,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &511187248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 511187243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b0e04e2572f9a940a47465f6f3c2f00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  parameter: ReverbWet
-  TriggerEvent: 0
-  value: 0.84
---- !u!114 &511187249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 511187243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b0e04e2572f9a940a47465f6f3c2f00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  parameter: ReverbTime
-  TriggerEvent: 0
-  value: 0.64
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
