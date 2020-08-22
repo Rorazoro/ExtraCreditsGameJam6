@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 
 namespace Assets.Entities {
     public class Player : MonoBehaviour {
+
+        public GameObject audioManager;
         private SpriteRenderer spriteRenderer = null;
         private Rigidbody2D rb = null;
 
