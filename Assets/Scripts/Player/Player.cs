@@ -33,7 +33,7 @@ namespace Assets.Entities {
             entityMotor.Tick ();
             playerInteractHandler.Tick ();
             //Game Audio
-            if (playerInputHandler.isInteraction)
+            if (playerInputHandler.isInteraction && AudioManager != null)
             {
                 AudioManager.GetComponent<CharacterAudio>().Cut();
             }
