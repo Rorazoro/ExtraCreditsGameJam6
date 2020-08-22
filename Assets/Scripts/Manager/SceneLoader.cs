@@ -60,6 +60,8 @@ namespace Assets.Managers {
             isSceneLoaded = true;
             currentScene = sceneName;
 
+            UIManager.Instance.SetupCanvas ();
+
             if (doAfter != null) {
                 doAfter ();
             }

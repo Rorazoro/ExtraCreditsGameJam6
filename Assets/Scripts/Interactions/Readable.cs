@@ -1,10 +1,12 @@
 using Assets.Interfaces;
+using Assets.Managers;
 using UnityEngine;
 
 [RequireComponent (typeof (CircleCollider2D))]
 public class Readable : MonoBehaviour, IInteractable {
+    public Dialogue dialogue;
     public void DoInteraction () {
-        Debug.Log ("You stare at the red dot until it vanishes.");
+        DialogueManager.Instance.StartDialogue (dialogue);
         gameObject.SetActive (false);
     }
 }

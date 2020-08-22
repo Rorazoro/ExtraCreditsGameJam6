@@ -134,6 +134,8 @@ GameObject:
   - component: {fileID: 412272221}
   - component: {fileID: 412272222}
   - component: {fileID: 412272225}
+  - component: {fileID: 412272223}
+  - component: {fileID: 412272226}
   - component: {fileID: 412272224}
   m_Layer: 0
   m_Name: GameManager
@@ -169,6 +171,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayModeScene: 2
+--- !u!114 &412272223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412272220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc20dd2ad9fac15498f5d29fd416dfb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &412272224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,3 +209,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 584a921cca324194ebb513f0e783d41a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &412272226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412272220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa1c9b8214bbe143bd65c1a200a43d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasPrefab: {fileID: 8963181478616756308, guid: c7e01bcb70fbd434f9d88fc5ace8e462, type: 3}
