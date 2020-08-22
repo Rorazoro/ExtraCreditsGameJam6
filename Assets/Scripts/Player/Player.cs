@@ -3,9 +3,10 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Assets.Entities {
+
     public class Player : MonoBehaviour {
 
-        public GameObject audioManager;
+        public GameObject AudioManager;
         private SpriteRenderer spriteRenderer = null;
         private Rigidbody2D rb = null;
 
@@ -31,6 +32,16 @@ namespace Assets.Entities {
             playerInputHandler.ReadValue ();
             entityMotor.Tick ();
             playerInteractHandler.Tick ();
+            
+            //Game Audio
+            if (playerInputHandler.isInteraction && AudioManager != null)
+            {
+                AudioManager.GetComponent<CharacterAudio>().Cut();
+            }
+            if (playerInputHandler.movement != new Vector2(0,0) && AudioManager != null)
+            {
+                AudioManager.GetComponent<CharacterAudio>().FootStep();
+            }
         }
 
         private void OnTriggerEnter2D (Collider2D other) => playerInteractHandler?.OnTriggerEnter2D (other);

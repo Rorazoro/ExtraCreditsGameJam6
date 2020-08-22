@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using Assets.Interfaces;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CharacterAudio : MonoBehaviour
 {
@@ -10,19 +13,25 @@ public class CharacterAudio : MonoBehaviour
     public GameObject cut;
 
     public float footstepsSpeed = 0.5f;
+    private float nextFootstep;
 
-    void FixedUpdate()
+    private void Awake()
     {
-        //If its moving, iniciate a sort of "cooldown" timer for the footstep SFX.
-        /*
-        if (Moving)
+        nextFootstep = 0;
+    }
+    //Functions
+
+    //Sounds
+    public void FootStep()
+    {
+        if (Time.time > nextFootstep)
         {
-            //Cooldown timer
+            nextFootstep = Time.time + footstepsSpeed;
             footsteps.GetComponent<FMODUnity.StudioEventEmitter>().Play();
-        } else
-        {
-            footsteps.GetComponent<FMODUnity.StudioEventEmitter>().Stop();
         }
-        */
+    }
+    public void Cut()
+    {
+        cut.GetComponent<FMODUnity.StudioEventEmitter>().Play();
     }
 }
