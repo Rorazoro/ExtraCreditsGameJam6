@@ -6,6 +6,8 @@ namespace Assets.Entities {
 
     public class Player : MonoBehaviour {
 
+        private Animator anim;
+
         public GameObject AudioManager;
         private SpriteRenderer spriteRenderer = null;
         private Rigidbody2D rb = null;
@@ -19,6 +21,7 @@ namespace Assets.Entities {
         private float speed = 3f;
 
         private void Awake () {
+            anim = GetComponent<Animator>();
             spriteRenderer = GetComponent<SpriteRenderer> ();
             rb = GetComponent<Rigidbody2D> ();
             playerInput = GetComponent<PlayerInput> ();
@@ -33,14 +36,27 @@ namespace Assets.Entities {
             entityMotor.Tick ();
             playerInteractHandler.Tick ();
             
+            /*
             //Game Audio
             if (playerInputHandler.isInteraction && AudioManager != null)
             {
                 AudioManager.GetComponent<CharacterAudio>().Cut();
             }
-            if (playerInputHandler.movement != new Vector2(0,0) && AudioManager != null)
+            */
+            if (playerInputHandler.movement != new Vector2(0,0))
             {
-                AudioManager.GetComponent<CharacterAudio>().FootStep();
+                anim.SetBool("Moving", true);
+            } else
+            {
+                anim.SetBool("Moving", false);
+            }
+
+            if (playerInputHandler.movement.x < -0.5)
+            {
+                GetComponent<SpriteRenderer>().flipX = true;
+            } else if (playerInputHandler.movement.x > 0.5)
+            {
+                GetComponent<SpriteRenderer>().flipX = false;
             }
         }
 
@@ -61,6 +77,17 @@ namespace Assets.Entities {
             if (playerInputHandler != null) {
                 playerInputHandler.EnableDebugging = value;
             }
+        }
+
+
+        //Game Audio
+        public void Footstep()
+        {
+            AudioManager.GetComponent<CharacterAudio>().FootStep();
+        }
+        public void FootstepLow()
+        {
+            AudioManager.GetComponent<CharacterAudio>().FootStepLow();
         }
     }
 }

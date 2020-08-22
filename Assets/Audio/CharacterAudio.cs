@@ -51,19 +51,11 @@ public class CharacterAudio : MonoBehaviour
     //Sounds
     public void FootStep()
     {
-        if (Time.time > nextFootstep)
-        {
-            nextFootstep = Time.time + footstepsSpeed;
-            if(feet == 0)
-            {
-                footsteps.GetComponent<FMODUnity.StudioEventEmitter>().Play();
-                feet = 1;
-            } else
-            {
-                footstepsLow.GetComponent<FMODUnity.StudioEventEmitter>().Play();
-                feet = 0;
-            }
-        }
+        footsteps.GetComponent<FMODUnity.StudioEventEmitter>().Play();
+    }
+    public void FootStepLow()
+    {
+        footsteps.GetComponent<FMODUnity.StudioEventEmitter>().Play();
     }
     public void Cut()
     {
