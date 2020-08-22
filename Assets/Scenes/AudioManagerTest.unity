@@ -155,6 +155,7 @@ Transform:
   - {fileID: 907284804}
   - {fileID: 1417778733}
   - {fileID: 1147502097}
+  - {fileID: 1315506976}
   m_Father: {fileID: 386563904}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -170,11 +171,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e6cb508313043940a60ca02bb80197b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitPlayer: 0
   Volume: 0
   character: {fileID: 386563902}
   footsteps: {fileID: 907284803}
   footstepsLow: {fileID: 1417778731}
   cut: {fileID: 1147502096}
+  hit: {fileID: 1315506975}
   footstepsSpeed: 0.35
   Grass_or_Stone: 0
   feet: 0
@@ -1075,6 +1078,9 @@ MonoBehaviour:
   music: {fileID: 511187244}
   ReverbTime: 0.25
   ReverbWet: 0.7
+  ambienceVolume: 0
+  musicVolume: 0
+  sfxVolume: 0
 --- !u!4 &511187247
 Transform:
   m_ObjectHideFlags: 0
@@ -2029,6 +2035,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1250207189}
   m_CullTransparentMesh: 0
+--- !u!1 &1315506975
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1315506976}
+  - component: {fileID: 1315506977}
+  m_Layer: 0
+  m_Name: Hit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1315506976
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315506975}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 70979075}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1315506977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315506975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Character/Hit
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &1397900962
 GameObject:
   m_ObjectHideFlags: 0
@@ -2116,6 +2176,7 @@ GameObject:
   - component: {fileID: 1417260730}
   - component: {fileID: 1417260729}
   - component: {fileID: 1417260732}
+  - component: {fileID: 1417260733}
   m_Layer: 0
   m_Name: PlantPlaceholder
   m_TagString: Plant
@@ -2138,7 +2199,8 @@ MonoBehaviour:
   player: {fileID: 0}
   growth: 0
   max: 8
-  fmod: {fileID: 1417260732}
+  grow: {fileID: 1417260732}
+  burn: {fileID: 1417260733}
   nextGrowthSpeed: 1
 --- !u!212 &1417260730
 SpriteRenderer:
@@ -2219,6 +2281,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CollisionTag: 
   Event: event:/World/Grow
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!114 &1417260733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417260728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/World/Burn
   PlayEvent: 0
   StopEvent: 0
   AllowFadeout: 1

@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.00.00">
-	<object class="AudioFile" id="{b2042590-a58c-45b8-a657-091f8b5b785f}">
+	<object class="AudioFile" id="{82e48592-8414-4956-85a9-45f7c369dce2}">
 		<property name="assetPath">
-			<value>Forest Ambience.wav</value>
-		</property>
-		<property name="isStreaming">
-			<value>true</value>
+			<value>Plant_destroy_1.wav</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>96</value>
+			<value>44.0999985</value>
 		</property>
 		<property name="channelCount">
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>120.40000000000001</value>
+			<value>0.62501133786848073</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{ca7d3239-fa33-4db3-99cb-37be3f6f357b}</destination>

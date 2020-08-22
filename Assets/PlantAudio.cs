@@ -11,7 +11,8 @@ public class PlantAudio : MonoBehaviour
     public int growth;
     public float max = 8;
     private float nextGrowth;
-    public FMODUnity.StudioEventEmitter fmod;
+    public FMODUnity.StudioEventEmitter grow;
+    public FMODUnity.StudioEventEmitter burn;
 
     public float nextGrowthSpeed = 1f;
 
@@ -20,7 +21,6 @@ public class PlantAudio : MonoBehaviour
     private void Awake()
     {
         player = GameObject.FindWithTag("Player");
-        fmod = GetComponent<FMODUnity.StudioEventEmitter>();
         growth = 0;
         nextGrowth = 2;
     }
@@ -30,16 +30,16 @@ public class PlantAudio : MonoBehaviour
         distance = new Vector2(player.transform.position.x - gameObject.transform.position.x, player.transform.position.y - gameObject.transform.position.y);
         if (distance.x > 0)
         {
-            fmod.SetParameter("PlantPanning", Mathf.Clamp(distance.magnitude, 0, max)*-1/max);
+            grow.SetParameter("PlantPanning", Mathf.Clamp(distance.magnitude, 0, max)*-1/max);
         } else
         {
-            fmod.SetParameter("PlantPanning", Mathf.Clamp(distance.magnitude, 0, max)/max);
+            grow.SetParameter("PlantPanning", Mathf.Clamp(distance.magnitude, 0, max)/max);
         }
         //Volume
-        fmod.SetParameter("PlantVolume", Mathf.Clamp(distance.magnitude, 0, max)/ max);
+        grow.SetParameter("PlantVolume", Mathf.Clamp(distance.magnitude, 0, max)/ max);
 
         //FMOD
-        fmod.SetParameter("PlantSize", growth);
+        grow.SetParameter("PlantSize", growth);
 
         if (Time.time > nextGrowth && growth < 4)
         {
@@ -52,6 +52,10 @@ public class PlantAudio : MonoBehaviour
     void Grow()
     {
         if (growth != 0)
-            fmod.Play();
+            grow.Play();
+    }
+    void Burn()
+    {
+        burn.Play();
     }
 }
