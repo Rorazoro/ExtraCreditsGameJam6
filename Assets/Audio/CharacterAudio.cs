@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Assets.Interfaces;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CharacterAudio : MonoBehaviour
 {
+    private PlayerInput playerInput = null;
+    private IInputHandler playerInputHandler = null;
 
     public GameObject character;
     public GameObject footsteps;
@@ -14,7 +18,19 @@ public class CharacterAudio : MonoBehaviour
     private Vector2 currentPos;
     private float nextFootstep;
 
+    private void Awake()
+    {
+        playerInput = character.GetComponent<PlayerInput>();
+        playerInputHandler = new PlayerInputHandler(playerInput);
+    }
     void FixedUpdate()
+    {
+        //Footstep Cooldown
+        FootStep();
+    }
+
+    //Sounds
+    public void FootStep()
     {
         currentPos = character.transform.position;
         if (prevPos != currentPos)
@@ -22,10 +38,13 @@ public class CharacterAudio : MonoBehaviour
             if (Time.time > nextFootstep)
             {
                 nextFootstep = Time.time + footstepsSpeed;
-                footsteps.GetComponent<FMODUnity.StudioEventEmitter>().Play();
+                footsteps.GetComponent<FMODUnity.StudioEventEmitter>().Play(); ;
             }
         }
-        Debug.Log(character.transform.position);
         prevPos = currentPos;
+    }
+    public void Cut()
+    {
+        cut.GetComponent<FMODUnity.StudioEventEmitter>().Play();
     }
 }
