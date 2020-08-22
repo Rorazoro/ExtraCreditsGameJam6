@@ -7,6 +7,7 @@ namespace Assets.Entities {
     public class Player : MonoBehaviour {
 
         private Animator anim;
+        public Animator slashAnimator;
 
         public GameObject AudioManager;
         private SpriteRenderer spriteRenderer = null;
@@ -17,10 +18,13 @@ namespace Assets.Entities {
         private EntityMotor entityMotor = null;
         private PlayerInteractHandler playerInteractHandler = null;
 
+        private Vector3 scale;
+
         [SerializeField]
         private float speed = 3f;
 
         private void Awake () {
+            scale = transform.localScale;
             anim = GetComponent<Animator>();
             spriteRenderer = GetComponent<SpriteRenderer> ();
             rb = GetComponent<Rigidbody2D> ();
@@ -36,13 +40,12 @@ namespace Assets.Entities {
             entityMotor.Tick ();
             playerInteractHandler.Tick ();
             
-            /*
-            //Game Audio
-            if (playerInputHandler.isInteraction && AudioManager != null)
+            if (playerInputHandler.isInteraction)
             {
+                //Cut (For now)
+                slashAnimator.SetTrigger("Cut");
                 AudioManager.GetComponent<CharacterAudio>().Cut();
             }
-            */
             if (playerInputHandler.movement != new Vector2(0,0))
             {
                 anim.SetBool("Moving", true);
@@ -53,10 +56,10 @@ namespace Assets.Entities {
 
             if (playerInputHandler.movement.x < -0.5)
             {
-                GetComponent<SpriteRenderer>().flipX = true;
+                transform.localScale = new Vector3(scale.x * -1, transform.localScale.y, transform.localScale.z);
             } else if (playerInputHandler.movement.x > 0.5)
             {
-                GetComponent<SpriteRenderer>().flipX = false;
+                transform.localScale = new Vector3(scale.x, transform.localScale.y, transform.localScale.z);
             }
         }
 

@@ -18,17 +18,9 @@ public class CharacterAudio : MonoBehaviour
     public GameObject cut;
     public GameObject hit;
 
-    public float footstepsSpeed = 0.5f;
     [Range(0, 1)]
     public float Grass_or_Stone = 0;
 
-    private float nextFootstep;
-    public int feet = 0;
-
-    private void Awake()
-    {
-        nextFootstep = 0;
-    }
     //Functions
     private void Update()
     {
