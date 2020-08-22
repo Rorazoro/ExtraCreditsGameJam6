@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.00.00">
-	<object class="ParameterPreset" id="{22de7893-0c4f-4a73-8881-adabade78a46}">
+	<object class="ParameterPreset" id="{7044e42f-6b02-4b3f-8b8d-748c838c17f6}">
 		<property name="name">
-			<value>PlantPanning</value>
+			<value>ReverbTime</value>
 		</property>
 		<relationship name="folder">
 			<destination>{6723238c-0e79-4ac0-b660-5b56ce298ecc}</destination>
 		</relationship>
 		<relationship name="parameter">
-			<destination>{a8552a3c-b8e0-47a1-8074-6c4a564a0336}</destination>
+			<destination>{3e9ba88c-58a1-4357-83f2-d50c9472666f}</destination>
 		</relationship>
 	</object>
-	<object class="GameParameter" id="{a8552a3c-b8e0-47a1-8074-6c4a564a0336}">
-		<property name="minimum">
-			<value>-1</value>
+	<object class="GameParameter" id="{3e9ba88c-58a1-4357-83f2-d50c9472666f}">
+		<property name="isGlobal">
+			<value>true</value>
 		</property>
 		<property name="initialValue">
 			<value>0</value>

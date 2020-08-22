@@ -1,25 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.00.00">
-	<object class="ParameterPreset" id="{22de7893-0c4f-4a73-8881-adabade78a46}">
+	<object class="ParameterPreset" id="{7ff7e236-e3ad-4c08-ae33-b5b81ca1a9e6}">
 		<property name="name">
-			<value>PlantPanning</value>
+			<value>PlantSize</value>
 		</property>
 		<relationship name="folder">
 			<destination>{6723238c-0e79-4ac0-b660-5b56ce298ecc}</destination>
 		</relationship>
 		<relationship name="parameter">
-			<destination>{a8552a3c-b8e0-47a1-8074-6c4a564a0336}</destination>
+			<destination>{96ff1004-5ff6-41fa-a10c-7903a6dc0231}</destination>
 		</relationship>
 	</object>
-	<object class="GameParameter" id="{a8552a3c-b8e0-47a1-8074-6c4a564a0336}">
-		<property name="minimum">
-			<value>-1</value>
+	<object class="GameParameter" id="{96ff1004-5ff6-41fa-a10c-7903a6dc0231}">
+		<property name="maximum">
+			<value>4</value>
 		</property>
 		<property name="initialValue">
 			<value>0</value>
-		</property>
-		<property name="isExposedRecursively">
-			<value>false</value>
 		</property>
 	</object>
 </objects>

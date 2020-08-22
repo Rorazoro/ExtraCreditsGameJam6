@@ -81,5 +81,6 @@ MonoBehaviour:
   Banks:
   - Character SFX
   - Music
+  - World SFX
   BanksToLoad: []
   LiveUpdatePort: 9264
