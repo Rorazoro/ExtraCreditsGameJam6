@@ -45,7 +45,6 @@ public class PlantAudio : MonoBehaviour
         {
             nextGrowth = Time.time + nextGrowthSpeed;
             Grow();
-            Debug.Log("Grow Plant!");
             growth++;
         }
     }

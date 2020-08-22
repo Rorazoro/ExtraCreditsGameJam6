@@ -12,9 +12,6 @@ public class GameAudio : MonoBehaviour
     public FMODUnity.StudioEventEmitter ambience;
     public FMODUnity.StudioEventEmitter music;
 
-    public FMODUnity.StudioGlobalParameterTrigger reverbTime;
-    public FMODUnity.StudioGlobalParameterTrigger reverbWet;
-
     private GameObject player;
     private GameObject[] plants;
 
@@ -43,7 +40,7 @@ public class GameAudio : MonoBehaviour
         }
         player.GetComponentInChildren<CharacterAudio>().Volume = SFXSlider.value;
 
-        reverbTime.value = ReverbTime;
-        reverbWet.value = ReverbWet;
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ReverbTime", ReverbTime);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ReverbWet", ReverbWet);
     }
 }

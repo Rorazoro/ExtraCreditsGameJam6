@@ -198,7 +198,11 @@
 			<destination>{0fb28e52-6365-43a4-981d-ae9036164577}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{eb0148e7-3d37-4abc-aff9-91a2d89c2bb6}" />
+	<object class="MixerBusPanner" id="{eb0148e7-3d37-4abc-aff9-91a2d89c2bb6}">
+		<property name="stereoPan">
+			<value>8</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{9dac699b-1cb9-421a-870f-727f09e02321}" />
 	<object class="SFXReverbEffect" id="{fb7595b9-bfe3-4d9e-9b88-06411c40c602}">
 		<relationship name="automators">
