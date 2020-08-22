@@ -72,6 +72,12 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{46a08c6b-d4c9-4cab-b856-55508ce6d03f}">
+		<property name="overridingInputFormat">
+			<value>1</value>
+		</property>
+		<property name="inputFormatOverridden">
+			<value>true</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{e39cd46b-f5d7-4251-a216-bfe07d664884}</destination>
 		</relationship>
@@ -91,6 +97,9 @@
 	<object class="MultiSound" id="{c108551f-8be7-479e-863c-2fe05200e592}">
 		<property name="length">
 			<value>0.37501133786848073</value>
+		</property>
+		<property name="playCount">
+			<value>12</value>
 		</property>
 		<property name="playlistMode">
 			<value>1</value>
@@ -124,7 +133,14 @@
 			<destination>{f4927c5d-d312-422b-a607-e7ab216bac9b}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{78966304-c6e0-44ce-8e47-98ac28f4e8a0}" />
+	<object class="MixerBusPanner" id="{78966304-c6e0-44ce-8e47-98ac28f4e8a0}">
+		<property name="overridingOutputFormat">
+			<value>1</value>
+		</property>
+		<property name="outputFormatOverridden">
+			<value>true</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{8fe3946b-378c-46ab-a238-180b2212f265}" />
 	<object class="RandomizerModulator" id="{8203b78e-a8e6-4e55-8c40-35eef0fd72ef}">
 		<property name="nameOfPropertyBeingModulated">

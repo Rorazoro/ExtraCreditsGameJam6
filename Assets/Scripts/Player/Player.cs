@@ -32,10 +32,15 @@ namespace Assets.Entities {
             playerInputHandler.ReadValue ();
             entityMotor.Tick ();
             playerInteractHandler.Tick ();
+            
             //Game Audio
             if (playerInputHandler.isInteraction && AudioManager != null)
             {
                 AudioManager.GetComponent<CharacterAudio>().Cut();
+            }
+            if (playerInputHandler.movement != new Vector2(0,0) && AudioManager != null)
+            {
+                AudioManager.GetComponent<CharacterAudio>().FootStep();
             }
         }
 

@@ -11,7 +11,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>0.25</value>
+			<value>0.37501133786848073</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{ca7d3239-fa33-4db3-99cb-37be3f6f357b}</destination>
