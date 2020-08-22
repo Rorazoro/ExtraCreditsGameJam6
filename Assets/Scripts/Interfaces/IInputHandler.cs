@@ -4,7 +4,7 @@ namespace Assets.Interfaces {
     public interface IInputHandler {
         bool EnableDebugging { get; set; }
         Vector2 movement { get; }
-        //Vector2 lookDirection { get; }
+        bool isInteraction { get; }
         void ReadValue ();
 
     }

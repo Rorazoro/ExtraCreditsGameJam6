@@ -6,32 +6,33 @@ namespace Assets.Entities {
     public class Player : MonoBehaviour {
         private SpriteRenderer spriteRenderer = null;
         private Rigidbody2D rb = null;
-        //private Animator animator = null;
-        private PlayerInput playerInput = null;
 
-        //private PlayerHealthSystem playerHealthSystem = null;
+        private PlayerInput playerInput = null;
         private IInputHandler playerInputHandler = null;
         private EntityMotor entityMotor = null;
-        private PlayerAnimator playerAnimator = null;
-        //private PlayerConfig playerConfig = null;
+        private PlayerInteractHandler playerInteractHandler = null;
+
         [SerializeField]
         private float speed = 3f;
 
         private void Awake () {
             spriteRenderer = GetComponent<SpriteRenderer> ();
             rb = GetComponent<Rigidbody2D> ();
-            //animator = GetComponent<Animator> ();
             playerInput = GetComponent<PlayerInput> ();
 
             playerInputHandler = new PlayerInputHandler (playerInput);
             entityMotor = new EntityMotor (playerInputHandler, rb, speed);
+            playerInteractHandler = new PlayerInteractHandler (playerInputHandler);
         }
 
         private void Update () {
             playerInputHandler.ReadValue ();
             entityMotor.Tick ();
-            //playerAnimator.Tick ();
+            playerInteractHandler.Tick ();
         }
+
+        private void OnTriggerEnter2D (Collider2D other) => playerInteractHandler?.OnTriggerEnter2D (other);
+        private void OnTriggerExit2D (Collider2D other) => playerInteractHandler?.OnTriggerExit2D (other);
 
         // public void InitializePlayer (PlayerConfig config) {
         //     playerConfig = config;

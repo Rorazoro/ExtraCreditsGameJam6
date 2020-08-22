@@ -17,13 +17,13 @@ namespace Assets.Managers {
         public string CurrentScene { get => currentScene; }
 
         private void Start () {
-            startScene = Application.isEditor ? DebugManager.Instance.DebugScene : Scenes.MainMenu;
+            startScene = Application.isEditor ? DebugManager.Instance.PlayModeScene : Scenes.MainMenu;
 
             if (startScene != Scenes.Preload) {
                 UnloadAllScenesExcept (Scenes.Preload);
                 Action doAfter = null;
 
-                LoadScene (startScene, 3f, doAfter);
+                LoadScene (startScene, 1f, doAfter);
             }
         }
 

@@ -11,6 +11,7 @@ public class PlayerInputHandler : IInputHandler {
 
     public Vector2 movement { get; private set; }
     public Vector2 navigate { get; private set; }
+    public bool isInteraction { get; private set; }
     public bool EnableDebugging { get => enableDebugging; set => enableDebugging = value; }
 
     //public Vector2 lookDirection { get; private set; }
@@ -35,6 +36,10 @@ public class PlayerInputHandler : IInputHandler {
         if (inputAction != null) {
 
             bool isInputBound = false;
+
+            navigate = Vector2.zero;
+            isInteraction = false;
+
             switch (inputAction.name) {
                 case "Move":
                     movement = inputAction.ReadValue<Vector2> ();
@@ -42,6 +47,10 @@ public class PlayerInputHandler : IInputHandler {
                     break;
                 case "Navigate":
                     navigate = inputAction.ReadValue<Vector2> ();
+                    isInputBound = true;
+                    break;
+                case "Interact":
+                    isInteraction = inputAction.triggered;
                     isInputBound = true;
                     break;
             }
