@@ -31,7 +31,7 @@ public class GameAudio : MonoBehaviour
         music.Play();
 
         player = GameObject.FindWithTag("Player");
-        plants = GameObject.FindGameObjectsWithTag("Plant");
+        plants = GameObject.FindGameObjectsWithTag("MultiInteractable");
     }
 
     // Update is called once per frame
@@ -47,8 +47,8 @@ public class GameAudio : MonoBehaviour
         foreach(GameObject go in plants)
         {
             go.GetComponent<PlantAudio>().grow.SetParameter("OverallVolume", sfxVolume);
-            go.GetComponent<PlantAudio>().burn.SetParameter("OverallVolume", sfxVolume);
-
+            go.GetComponent<PlantAudio>().burn.SetParameter("BurnVolume", sfxVolume);
+            go.GetComponent<PlantAudio>().cut.SetParameter("DestroyVolume", sfxVolume);
         }
         player.GetComponentInChildren<CharacterAudio>().Volume = sfxVolume;
 

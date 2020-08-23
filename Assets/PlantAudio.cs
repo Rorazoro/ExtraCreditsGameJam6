@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -9,20 +10,17 @@ public class PlantAudio : MonoBehaviour
 
     [Range(0, 4)]
     public int growth;
+    public int prevGrowth;
     public float max = 8;
-    private float nextGrowth;
     public FMODUnity.StudioEventEmitter grow;
     public FMODUnity.StudioEventEmitter burn;
-
-    public float nextGrowthSpeed = 1f;
+    public FMODUnity.StudioEventEmitter cut;
 
     private Vector2 distance;
 
     private void Awake()
     {
         player = GameObject.FindWithTag("Player");
-        growth = 0;
-        nextGrowth = 2;
     }
     private void Update()
     {
@@ -41,21 +39,34 @@ public class PlantAudio : MonoBehaviour
         //FMOD
         grow.SetParameter("PlantSize", growth);
 
-        if (Time.time > nextGrowth && growth < 4)
+        if (prevGrowth != growth)
         {
-            nextGrowth = Time.time + nextGrowthSpeed;
-            Grow();
-            growth++;
+            if (prevGrowth < growth)
+            {
+                //Plant has grown
+                Grow();
+            } else if (prevGrowth > growth)
+            {
+                //Plant has been cut
+                Cut();
+            }
+            prevGrowth = growth;
+        } else
+        {
+            prevGrowth = growth;
         }
     }
     // Update is called once per frame
-    void Grow()
+    public void Grow()
     {
-        if (growth != 0)
-            grow.Play();
+        grow.Play();
     }
-    void Burn()
+    public void Burn()
     {
         burn.Play();
+    }
+    public void Cut()
+    {
+        cut.Play();
     }
 }

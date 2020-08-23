@@ -18,7 +18,12 @@ public class Plant : MonoBehaviour, IInteractable {
     private SpriteRenderer spriteRenderer;
     private Color[] stageColors;
 
+    //Audio
+    public PlantAudio pAudio;
+
+
     private void Awake () {
+        pAudio = GetComponent<PlantAudio>();
         spriteRenderer = GetComponent<SpriteRenderer> ();
         growthTime = new DateTime ();
         col2d.enabled = false;
@@ -33,6 +38,9 @@ public class Plant : MonoBehaviour, IInteractable {
             InitializePlant (3);
         }
         FindNeighbours ();
+
+        pAudio.growth = stage + 1;
+        pAudio.prevGrowth = stage + 1;
     }
 
     private void Update () {
@@ -40,6 +48,9 @@ public class Plant : MonoBehaviour, IInteractable {
             col2d.enabled = true;
             GrowPlant ();
         }
+
+        //Match Growth with audio
+        pAudio.growth = stage + 1;
     }
 
     public void InitializePlant (int initStage) {
