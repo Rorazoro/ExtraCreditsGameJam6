@@ -10,29 +10,24 @@ using UnityEngine.Tilemaps;
 public class Plant : MonoBehaviour, IInteractable {
 
     public PlantScriptableObject plantData;
-    public DateTime growthTime;
+    public float growthTime;
+    public float growthTimeMax;
+    public bool isGrowing = false;
     public int stage;
     public bool isSuperPlant;
     public List<Plant> neighbours = new List<Plant> ();
-    public BoxCollider2D col2d;
+    public Collider2D col2d;
+    public Sprite[] stageSprites;
+
     private SpriteRenderer spriteRenderer;
-    private Color[] stageColors;
 
     //Audio
     public PlantAudio pAudio;
 
-
     private void Awake () {
-        pAudio = GetComponent<PlantAudio>();
+        pAudio = GetComponent<PlantAudio> ();
         spriteRenderer = GetComponent<SpriteRenderer> ();
-        growthTime = new DateTime ();
         col2d.enabled = false;
-
-        stageColors = new Color[4];
-        stageColors[0] = Color.gray;
-        stageColors[1] = Color.green;
-        stageColors[2] = Color.yellow;
-        stageColors[3] = Color.red;
 
         if (isSuperPlant) {
             InitializePlant (3);
@@ -44,20 +39,23 @@ public class Plant : MonoBehaviour, IInteractable {
     }
 
     private void Update () {
-        if (stage > 0 && growthTime <= DateTime.Now) {
-            col2d.enabled = true;
+        if (isGrowing && growthTime == growthTimeMax) {
+            //col2d.enabled = true;
             GrowPlant ();
+        } else {
+            growthTime++;
         }
-
-        //Match Growth with audio
-        pAudio.growth = stage + 1;
     }
 
     public void InitializePlant (int initStage) {
         plantData.health = plantData.maxHealth;
-        growthTime = DateTime.Now.AddSeconds (plantData.baseGrowthTime);
         stage = initStage;
-        spriteRenderer.color = stageColors[stage];
+
+        growthTimeMax = plantData.baseGrowthTime * 10 * (stage + 1);
+        growthTime = 0;
+
+        spriteRenderer.sprite = stageSprites[stage];
+        isGrowing = true;
     }
 
     public void DoInteraction () {
@@ -72,17 +70,22 @@ public class Plant : MonoBehaviour, IInteractable {
             SpreadPlants ();
         } else {
             stage++;
-            spriteRenderer.color = stageColors[stage];
+            spriteRenderer.sprite = stageSprites[stage];
         }
-        growthTime = DateTime.Now.AddSeconds (PlantManager.Instance.baseGrowthTime);
+        growthTimeMax = plantData.baseGrowthTime * 10 * (stage + 1);
+        growthTime = 0;
+
+        //Match Growth with audio
+        pAudio.growth = stage + 1;
     }
 
     public void CutPlant () {
         Debug.Log ($"Plant Cut!");
-        growthTime = DateTime.MaxValue;
+        growthTime = 0;
         stage = 0;
         col2d.enabled = false;
-        spriteRenderer.color = stageColors[stage];
+        spriteRenderer.sprite = stageSprites[stage];
+        isGrowing = false;
 
         if (isSuperPlant) {
             InitializePlant (0);
@@ -90,11 +93,11 @@ public class Plant : MonoBehaviour, IInteractable {
     }
 
     public void SpreadPlants () {
-        List<Plant> newPlants = neighbours.Where (p => p.stage == 0).ToList ();
+        List<Plant> newPlants = neighbours.Where (p => !p.isGrowing).ToList ();
         if (newPlants.Count > 0) {
             var random = new System.Random ();
             int index = random.Next (newPlants.Count);
-            newPlants[index].InitializePlant (1);
+            newPlants[index].InitializePlant (0);
         }
     }
 
