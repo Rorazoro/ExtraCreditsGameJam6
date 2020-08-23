@@ -1,6 +1,5 @@
 public enum Scenes {
     Preload,
     MainMenu,
-    PlayerMovement,
-    PlantGrowthTest
+    Prototype1
 }

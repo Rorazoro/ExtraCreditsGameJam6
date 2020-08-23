@@ -5,4 +5,5 @@ public class PlantScriptableObject : ScriptableObject {
 
     public int maxHealth;
     public int health;
+    public float baseGrowthTime;
 }

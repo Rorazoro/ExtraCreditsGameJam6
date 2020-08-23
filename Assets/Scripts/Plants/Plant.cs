@@ -44,7 +44,7 @@ public class Plant : MonoBehaviour, IInteractable {
 
     public void InitializePlant (int initStage) {
         plantData.health = plantData.maxHealth;
-        growthTime = DateTime.Now.AddSeconds (PlantManager.Instance.baseGrowthTime);
+        growthTime = DateTime.Now.AddSeconds (plantData.baseGrowthTime);
         stage = initStage;
         spriteRenderer.color = stageColors[stage];
     }
@@ -85,12 +85,14 @@ public class Plant : MonoBehaviour, IInteractable {
 
     private void FindNeighbours () {
         Plant[] plants = FindObjectsOfType<Plant> ();
+        Grid grid = FindObjectOfType<Grid> ();
+        Transform gridTransform = grid.transform;
 
         foreach (Plant plant in plants) {
             Transform otherT = plant.gameObject.transform;
-            if (((otherT.position.x == transform.position.x - 1 || otherT.position.x == transform.position.x + 1) && otherT.position.y == transform.position.y) ||
-                ((otherT.position.x == transform.position.x - 1 || otherT.position.x == transform.position.x + 1) && (otherT.position.y == transform.position.y + 1 || otherT.position.y == transform.position.y - 1)) ||
-                ((otherT.position.y == transform.position.y - 1 || otherT.position.y == transform.position.y + 1) && otherT.position.x == transform.position.x)) {
+            if (((otherT.position.x == transform.position.x - gridTransform.localScale.x || otherT.position.x == transform.position.x + gridTransform.localScale.x) && otherT.position.y == transform.position.y) ||
+                ((otherT.position.x == transform.position.x - gridTransform.localScale.x || otherT.position.x == transform.position.x + gridTransform.localScale.x) && (otherT.position.y == transform.position.y + gridTransform.localScale.y || otherT.position.y == transform.position.y - gridTransform.localScale.y)) ||
+                ((otherT.position.y == transform.position.y - gridTransform.localScale.y || otherT.position.y == transform.position.y + gridTransform.localScale.y) && otherT.position.x == transform.position.x)) {
                 neighbours.Add (plant);
             }
         }
