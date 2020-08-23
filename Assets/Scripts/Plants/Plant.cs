@@ -33,9 +33,6 @@ public class Plant : MonoBehaviour, IInteractable {
             InitializePlant (3);
         }
         FindNeighbours ();
-
-        pAudio.growth = stage + 1;
-        pAudio.prevGrowth = stage + 1;
     }
 
     private void Update () {
@@ -54,15 +51,18 @@ public class Plant : MonoBehaviour, IInteractable {
         growthTimeMax = plantData.baseGrowthTime * 10 * (stage + 1);
         growthTime = 0;
 
-        spriteRenderer.sprite = stageSprites[stage];
+        SetStageSprite (stage);
         isGrowing = true;
+
+        pAudio.growth = stage + 1;
+        pAudio.prevGrowth = stage + 1;
     }
 
     public void DoInteraction () {
-        plantData.health--;
-        if (plantData.health == 0) {
-            CutPlant ();
-        }
+        // plantData.health--;
+        // if (plantData.health == 0) {
+        CutPlant ();
+        //
     }
 
     public void GrowPlant () {
@@ -70,7 +70,7 @@ public class Plant : MonoBehaviour, IInteractable {
             SpreadPlants ();
         } else {
             stage++;
-            spriteRenderer.sprite = stageSprites[stage];
+            SetStageSprite (stage);
         }
         growthTimeMax = plantData.baseGrowthTime * 10 * (stage + 1);
         growthTime = 0;
@@ -80,11 +80,11 @@ public class Plant : MonoBehaviour, IInteractable {
     }
 
     public void CutPlant () {
-        Debug.Log ($"Plant Cut!");
+        //Debug.Log ($"Plant Cut!");
         growthTime = 0;
         stage = 0;
         col2d.enabled = false;
-        spriteRenderer.sprite = stageSprites[stage];
+        SetStageSprite (stage);
         isGrowing = false;
 
         if (isSuperPlant) {
@@ -119,5 +119,12 @@ public class Plant : MonoBehaviour, IInteractable {
             }
         }
 
+    }
+
+    private void SetStageSprite (int stage) {
+        float alpha = stage > 0 ? 255f : 0f;
+
+        spriteRenderer.sprite = stageSprites[stage];
+        spriteRenderer.color = new Color (spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, alpha);
     }
 }

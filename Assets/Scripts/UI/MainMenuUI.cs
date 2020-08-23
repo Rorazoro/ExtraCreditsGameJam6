@@ -5,6 +5,6 @@ using UnityEngine;
 
 public class MainMenuUI : MonoBehaviour {
     public void PlayGame () {
-        SceneLoader.Instance.LoadScene (Scenes.Prototype1, 1f, null);
+        SceneLoader.Instance.LoadScene (Scenes.Prototype2, 1f, null);
     }
 }

@@ -1,5 +1,5 @@
 public enum Scenes {
     Preload,
     MainMenu,
-    Prototype1
+    Prototype2
 }

@@ -14,7 +14,7 @@ public class PlayerCutHandler {
         bool cut = inputHandler.isCut;
 
         if (cut) {
-            Collider2D[] hitObjects = Physics2D.OverlapCircleAll (position, 2f, LayerMask.GetMask ("Plants"));
+            Collider2D[] hitObjects = Physics2D.OverlapCircleAll (position, 1f, LayerMask.GetMask ("Plants"));
             //Debug.Log ($"objects hit {hitObjects.Length}");
             foreach (Collider2D col in hitObjects) {
                 Plant obj = col.gameObject.GetComponent<Plant> ();
