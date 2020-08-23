@@ -12,6 +12,7 @@ public class PlayerInputHandler : IInputHandler {
     public Vector2 movement { get; private set; }
     public Vector2 navigate { get; private set; }
     public bool isInteraction { get; private set; }
+    public bool isCut { get; private set; }
     public bool EnableDebugging { get => enableDebugging; set => enableDebugging = value; }
 
     //public Vector2 lookDirection { get; private set; }
@@ -39,6 +40,7 @@ public class PlayerInputHandler : IInputHandler {
 
             navigate = Vector2.zero;
             isInteraction = false;
+            isCut = false;
 
             switch (inputAction.name) {
                 case "Move":
@@ -51,6 +53,10 @@ public class PlayerInputHandler : IInputHandler {
                     break;
                 case "Interact":
                     isInteraction = inputAction.triggered;
+                    isInputBound = true;
+                    break;
+                case "Fire":
+                    isCut = inputAction.triggered;
                     isInputBound = true;
                     break;
             }

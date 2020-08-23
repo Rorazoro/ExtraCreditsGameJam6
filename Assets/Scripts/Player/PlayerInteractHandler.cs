@@ -20,7 +20,6 @@ public class PlayerInteractHandler {
 
     public void OnTriggerEnter2D (Collider2D other) {
         if (other.CompareTag ("Interactable")) {
-            //Debug.Log ($"currentInterObj = {other.name}");
             currentInterObj = other.gameObject;
         }
     }
@@ -28,7 +27,6 @@ public class PlayerInteractHandler {
     public void OnTriggerExit2D (Collider2D other) {
         if (other.CompareTag ("Interactable")) {
             if (other.gameObject == currentInterObj) {
-                //Debug.Log ($"currentInterObj = null");
                 currentInterObj = null;
             }
         }

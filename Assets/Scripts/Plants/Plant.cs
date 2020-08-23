@@ -67,8 +67,12 @@ public class Plant : MonoBehaviour, IInteractable {
     }
 
     public void CutPlant () {
-        growthTime = DateTime.MinValue;
+        Debug.Log ($"Plant Cut!");
+        growthTime = DateTime.MaxValue;
         stage = 0;
+        col2d.enabled = false;
+        spriteRenderer.color = stageColors[stage];
+
         if (isSuperPlant) {
             InitializePlant (0);
         }
@@ -85,15 +89,19 @@ public class Plant : MonoBehaviour, IInteractable {
 
     private void FindNeighbours () {
         Plant[] plants = FindObjectsOfType<Plant> ();
-        Grid grid = FindObjectOfType<Grid> ();
-        Transform gridTransform = grid.transform;
 
-        foreach (Plant plant in plants) {
-            Transform otherT = plant.gameObject.transform;
-            if (((otherT.position.x == transform.position.x - gridTransform.localScale.x || otherT.position.x == transform.position.x + gridTransform.localScale.x) && otherT.position.y == transform.position.y) ||
-                ((otherT.position.x == transform.position.x - gridTransform.localScale.x || otherT.position.x == transform.position.x + gridTransform.localScale.x) && (otherT.position.y == transform.position.y + gridTransform.localScale.y || otherT.position.y == transform.position.y - gridTransform.localScale.y)) ||
-                ((otherT.position.y == transform.position.y - gridTransform.localScale.y || otherT.position.y == transform.position.y + gridTransform.localScale.y) && otherT.position.x == transform.position.x)) {
-                neighbours.Add (plant);
+        foreach (Plant p in plants) {
+
+            Vector3Int plantPos = Vector3Int.CeilToInt (gameObject.transform.localPosition);
+            Vector3Int otherPos = Vector3Int.CeilToInt (p.gameObject.transform.localPosition);
+
+            if (otherPos == plantPos + Vector3Int.right ||
+                otherPos == plantPos + Vector3Int.left ||
+                otherPos == plantPos + Vector3Int.up ||
+                otherPos == plantPos + Vector3Int.down
+            ) {
+
+                neighbours.Add (p);
             }
         }
 

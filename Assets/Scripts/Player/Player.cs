@@ -17,6 +17,7 @@ namespace Assets.Entities {
         private IInputHandler playerInputHandler = null;
         private EntityMotor entityMotor = null;
         private PlayerInteractHandler playerInteractHandler = null;
+        private PlayerCutHandler playerCutHandler = null;
 
         private Vector3 scale;
 
@@ -25,7 +26,7 @@ namespace Assets.Entities {
 
         private void Awake () {
             scale = transform.localScale;
-            anim = GetComponent<Animator>();
+            anim = GetComponent<Animator> ();
             spriteRenderer = GetComponent<SpriteRenderer> ();
             rb = GetComponent<Rigidbody2D> ();
             playerInput = GetComponent<PlayerInput> ();
@@ -33,33 +34,30 @@ namespace Assets.Entities {
             playerInputHandler = new PlayerInputHandler (playerInput);
             entityMotor = new EntityMotor (playerInputHandler, rb, speed);
             playerInteractHandler = new PlayerInteractHandler (playerInputHandler);
+            playerCutHandler = new PlayerCutHandler (playerInputHandler);
         }
 
         private void Update () {
             playerInputHandler.ReadValue ();
             entityMotor.Tick ();
             playerInteractHandler.Tick ();
-            
-            if (playerInputHandler.isInteraction)
-            {
+            playerCutHandler.Tick (gameObject.transform.position);
+
+            if (playerInputHandler.isCut) {
                 //Cut (For now)
-                slashAnimator.SetTrigger("Cut");
-                AudioManager.GetComponent<CharacterAudio>().Cut();
+                slashAnimator.SetTrigger ("Cut");
+                AudioManager.GetComponent<CharacterAudio> ().Cut ();
             }
-            if (playerInputHandler.movement != new Vector2(0,0))
-            {
-                anim.SetBool("Moving", true);
-            } else
-            {
-                anim.SetBool("Moving", false);
+            if (playerInputHandler.movement != new Vector2 (0, 0)) {
+                anim.SetBool ("Moving", true);
+            } else {
+                anim.SetBool ("Moving", false);
             }
 
-            if (playerInputHandler.movement.x < -0.5)
-            {
-                transform.localScale = new Vector3(scale.x * -1, transform.localScale.y, transform.localScale.z);
-            } else if (playerInputHandler.movement.x > 0.5)
-            {
-                transform.localScale = new Vector3(scale.x, transform.localScale.y, transform.localScale.z);
+            if (playerInputHandler.movement.x < -0.5) {
+                transform.localScale = new Vector3 (scale.x * -1, transform.localScale.y, transform.localScale.z);
+            } else if (playerInputHandler.movement.x > 0.5) {
+                transform.localScale = new Vector3 (scale.x, transform.localScale.y, transform.localScale.z);
             }
         }
 
@@ -82,15 +80,12 @@ namespace Assets.Entities {
             }
         }
 
-
         //Game Audio
-        public void Footstep()
-        {
-            AudioManager.GetComponent<CharacterAudio>().FootStep();
+        public void Footstep () {
+            AudioManager.GetComponent<CharacterAudio> ().FootStep ();
         }
-        public void FootstepLow()
-        {
-            AudioManager.GetComponent<CharacterAudio>().FootStepLow();
+        public void FootstepLow () {
+            AudioManager.GetComponent<CharacterAudio> ().FootStepLow ();
         }
     }
 }

@@ -5,6 +5,7 @@ namespace Assets.Interfaces {
         bool EnableDebugging { get; set; }
         Vector2 movement { get; }
         bool isInteraction { get; }
+        bool isCut { get; }
         void ReadValue ();
 
     }

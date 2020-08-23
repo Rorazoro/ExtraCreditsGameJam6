@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Interactable
   - Plant
+  - MultiInteractable
   layers:
   - Default
   - TransparentFX
