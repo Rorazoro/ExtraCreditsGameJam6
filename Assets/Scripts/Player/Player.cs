@@ -37,8 +37,7 @@ namespace Assets.Entities {
             playerCutHandler = new PlayerCutHandler (playerInputHandler);
         }
 
-        private void Update () {
-            playerInputHandler.ReadValue ();
+        private void FixedUpdate () {
             entityMotor.Tick ();
             playerInteractHandler.Tick ();
             playerCutHandler.Tick (gameObject.transform.position);
@@ -46,7 +45,7 @@ namespace Assets.Entities {
             if (playerInputHandler.isCut) {
                 //Cut (For now)
                 slashAnimator.SetTrigger ("Cut");
-                AudioManager.GetComponent<CharacterAudio> ().Cut ();
+                //AudioManager.GetComponent<CharacterAudio> ().Cut ();
             }
             if (playerInputHandler.movement != new Vector2 (0, 0)) {
                 anim.SetBool ("Moving", true);
@@ -63,16 +62,6 @@ namespace Assets.Entities {
 
         private void OnTriggerEnter2D (Collider2D other) => playerInteractHandler?.OnTriggerEnter2D (other);
         private void OnTriggerExit2D (Collider2D other) => playerInteractHandler?.OnTriggerExit2D (other);
-
-        // public void InitializePlayer (PlayerConfig config) {
-        //     playerConfig = config;
-        //     spriteRenderer.sprite = playerConfig.playerSprite;
-
-        //     playerInputHandler = new PlayerInputHandler (playerConfig.playerInput);
-        //     entityMotor = new EntityMotor (playerInputHandler, rb, playerConfig.Speed);
-        //     playerAnimator = new PlayerAnimator (playerInputHandler, animator);
-        //     playerHealthSystem = new PlayerHealthSystem (UIManager.Instance.GetPlayerHealthUI (playerConfig.playerIndex), playerConfig.MaxHealth);
-        // }
 
         public void ToggleInputDebugLog (bool value) {
             if (playerInputHandler != null) {

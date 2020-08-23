@@ -1,3 +1,4 @@
+using System.Linq;
 using Assets.Interfaces;
 using UnityEngine;
 
@@ -13,10 +14,11 @@ public class PlayerCutHandler {
         bool cut = inputHandler.isCut;
 
         if (cut) {
-            Collider2D[] hitObjects = Physics2D.OverlapCircleAll (position, 1f);
+            Collider2D[] hitObjects = Physics2D.OverlapCircleAll (position, 2f, LayerMask.GetMask ("Plants"));
+            //Debug.Log ($"objects hit {hitObjects.Length}");
             foreach (Collider2D col in hitObjects) {
                 Plant obj = col.gameObject.GetComponent<Plant> ();
-                if (obj != null) {
+                if (obj != null && obj.isGrowing && obj.stage > 0) {
                     obj.DoInteraction ();
                 }
             }

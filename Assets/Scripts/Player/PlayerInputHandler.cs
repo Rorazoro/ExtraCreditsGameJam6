@@ -26,7 +26,7 @@ public class PlayerInputHandler : IInputHandler {
 
     private void Input_OnActionTriggered (InputAction.CallbackContext context) {
         inputAction = context.action;
-
+        ReadValue ();
         // if (OnInput != null) {
         //     ReadValue ();
         //     OnInput (this, EventArgs.Empty);
