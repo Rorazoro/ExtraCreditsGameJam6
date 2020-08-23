@@ -16,7 +16,7 @@ public class Plant : MonoBehaviour, IInteractable {
     public int stage;
     public bool isSuperPlant;
     public bool isPillarPlant;
-    public Pillar pillar;
+    private Pillar pillar;
     public List<Plant> neighbours = new List<Plant> ();
     public Collider2D col2d;
     public Sprite[] stageSprites;
@@ -31,10 +31,14 @@ public class Plant : MonoBehaviour, IInteractable {
         spriteRenderer = GetComponent<SpriteRenderer> ();
         col2d.enabled = false;
 
+        if (isPillarPlant) {
+            FindPillar ();
+        }
+        FindNeighbours ();
+
         if (isSuperPlant) {
             InitializePlant (3);
         }
-        FindNeighbours ();
     }
 
     private void Update () {
@@ -123,6 +127,15 @@ public class Plant : MonoBehaviour, IInteractable {
                     neighbours.Add (p);
                 }
             }
+        }
+    }
+
+    private void FindPillar () {
+        Collider2D hitObject = Physics2D.OverlapCircle (transform.position, 3f, LayerMask.GetMask ("Pillars"));
+        if (hitObject != null) {
+            pillar = hitObject.gameObject.GetComponent<Pillar> ();
+        } else {
+            Debug.LogWarning ("Pillar Plant couldn't find Pillar");
         }
     }
 
