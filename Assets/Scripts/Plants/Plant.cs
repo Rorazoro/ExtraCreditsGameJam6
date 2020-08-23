@@ -15,6 +15,8 @@ public class Plant : MonoBehaviour, IInteractable {
     public bool isGrowing = false;
     public int stage;
     public bool isSuperPlant;
+    public bool isPillarPlant;
+    public Pillar pillar;
     public List<Plant> neighbours = new List<Plant> ();
     public Collider2D col2d;
     public Sprite[] stageSprites;
@@ -67,6 +69,9 @@ public class Plant : MonoBehaviour, IInteractable {
 
     public void GrowPlant () {
         if (stage == 3) {
+            if (isPillarPlant) {
+                pillar.IncreaseOvergrowth ();
+            }
             SpreadPlants ();
         } else {
             stage++;
@@ -90,6 +95,9 @@ public class Plant : MonoBehaviour, IInteractable {
         if (isSuperPlant) {
             InitializePlant (0);
         }
+        if (isPillarPlant) {
+            pillar.DecreaseOvergrowth ();
+        }
     }
 
     public void SpreadPlants () {
@@ -102,23 +110,23 @@ public class Plant : MonoBehaviour, IInteractable {
     }
 
     private void FindNeighbours () {
-        Plant[] plants = FindObjectsOfType<Plant> ();
+        foreach (Plant p in Resources.FindObjectsOfTypeAll (typeof (Plant)) as Plant[]) {
+            //Plant p = obj.GetComponent<Plant> ();
 
-        foreach (Plant p in plants) {
+            if (p != null) {
+                Vector3Int plantPos = Vector3Int.CeilToInt (gameObject.transform.localPosition);
+                Vector3Int otherPos = Vector3Int.CeilToInt (p.gameObject.transform.localPosition);
 
-            Vector3Int plantPos = Vector3Int.CeilToInt (gameObject.transform.localPosition);
-            Vector3Int otherPos = Vector3Int.CeilToInt (p.gameObject.transform.localPosition);
+                if (otherPos == plantPos + Vector3Int.right ||
+                    otherPos == plantPos + Vector3Int.left ||
+                    otherPos == plantPos + Vector3Int.up ||
+                    otherPos == plantPos + Vector3Int.down
+                ) {
 
-            if (otherPos == plantPos + Vector3Int.right ||
-                otherPos == plantPos + Vector3Int.left ||
-                otherPos == plantPos + Vector3Int.up ||
-                otherPos == plantPos + Vector3Int.down
-            ) {
-
-                neighbours.Add (p);
+                    neighbours.Add (p);
+                }
             }
         }
-
     }
 
     private void SetStageSprite (int stage) {
