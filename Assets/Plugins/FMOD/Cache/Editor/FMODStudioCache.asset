@@ -319,6 +319,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-8759603483913537905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footstep/FootstepVolume
+  m_EditorClassIdentifier: 
+  Name: FootstepVolume
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-8742762387129323285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,6 +370,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &-8710882086352353204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/FootstepLow/FootstepVolume
+  m_EditorClassIdentifier: 
+  Name: FootstepVolume
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-8709820141466720528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -677,7 +711,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-7972425017806525710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -711,13 +745,13 @@ MonoBehaviour:
   Path: event:/Character/FootstepLow
   guid: 9dfee165f886154390a998bfdfafd5b9
   Banks:
-  - {fileID: 1709512572246292683}
+  - {fileID: -482806936746304226}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 2530721794209342900}
-  - {fileID: -1571426753067871439}
+  - {fileID: 5457913728733429537}
+  - {fileID: -8710882086352353204}
   MinDistance: 0
   MaxDistance: 0
   Length: 375
@@ -738,6 +772,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &-7865830377452799544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Hit/HitVolume
+  m_EditorClassIdentifier: 
+  Name: HitVolume
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-7817625956554187269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1200,7 +1251,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-7277496743134337129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1270,6 +1321,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &-7137483761107998477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/DestroyPlant/DestroyVolume
+  m_EditorClassIdentifier: 
+  Name: DestroyVolume
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-7108702459054020597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1480,6 +1548,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &-6862330771488135478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Music Volume
+  m_EditorClassIdentifier: 
+  Name: Music Volume
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-6823905778686236974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1878,6 +1963,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-6355618799337035570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Cut/CutVolume
+  m_EditorClassIdentifier: 
+  Name: CutVolume
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-6328562228276303201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2453,6 +2555,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &-5581955315646694554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: SFX Volume
+  m_EditorClassIdentifier: 
+  Name: SFX Volume
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-5581258780161344443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2572,7 +2691,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-5395103234894770701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3744,12 +3863,12 @@ MonoBehaviour:
   Path: event:/Character/Cut
   guid: 5b08d31e66b7f740925e01ef5721c231
   Banks:
-  - {fileID: 1709512572246292683}
+  - {fileID: -482806936746304226}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -232367510744573852}
+  - {fileID: -6355618799337035570}
   MinDistance: 0
   MaxDistance: 0
   Length: 375
@@ -3853,6 +3972,23 @@ MonoBehaviour:
   m_Name: ReverbWet
   m_EditorClassIdentifier: 
   Name: ReverbWet
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &-3151732056700936800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: ReverbTime
+  m_EditorClassIdentifier: 
+  Name: ReverbTime
   Min: 0
   Max: 1
   Default: 0
@@ -4100,6 +4236,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-2924022997285359131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Build/Desktop/Music.bank
+  SubDir: 
+  lastModified: 637337944674212953
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-2821711328266802197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4203,7 +4357,7 @@ MonoBehaviour:
   lastModified: 637338123598647523
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-2738697251288954348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4255,6 +4409,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &-2707706041840854590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Ambient/Volume
+  m_EditorClassIdentifier: 
+  Name: Volume
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-2652393028623008847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4273,6 +4444,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-2564860743128173906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Grow/PlantPanning
+  m_EditorClassIdentifier: 
+  Name: PlantPanning
+  Min: -1
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-2558580217184482679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4443,7 +4631,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-2243377328843174388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4583,7 +4771,7 @@ MonoBehaviour:
   Path: event:/GameOver
   guid: d1f527626b0d0d4195bf328321c57340
   Banks:
-  - {fileID: 2424428704387021114}
+  - {fileID: -2924022997285359131}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -4913,15 +5101,15 @@ MonoBehaviour:
   Path: event:/World/Grow
   guid: b5b92125627c9f4995a01752312c1b5f
   Banks:
-  - {fileID: -2745977789451691957}
+  - {fileID: 3238832517037506048}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 5661446728588458116}
-  - {fileID: -7292110630224371562}
-  - {fileID: 7862609279209631592}
-  - {fileID: 4968373367950328069}
+  - {fileID: 9179575614092100365}
+  - {fileID: 1619863911845948611}
+  - {fileID: -2564860743128173906}
+  - {fileID: -735218420291229304}
   MinDistance: 0
   MaxDistance: 0
   Length: 875
@@ -5026,7 +5214,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-1500106351616013983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5444,6 +5632,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
+--- !u!114 &-735218420291229304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Grow/PlantSize
+  m_EditorClassIdentifier: 
+  Name: PlantSize
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 1
 --- !u!114 &-726089725578819078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5635,6 +5840,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-482806936746304226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Character SFX.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Build/Desktop/Character SFX.bank
+  SubDir: 
+  lastModified: 637337290627100281
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-460306848468931674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5905,7 +6128,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-221027035757923813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6078,10 +6301,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 7527920314022502219}
-  - {fileID: 1709512572246292683}
-  - {fileID: 586569046008592559}
-  - {fileID: 2424428704387021114}
-  - {fileID: -2745977789451691957}
+  - {fileID: -482806936746304226}
+  - {fileID: 7506620586141798676}
+  - {fileID: -2924022997285359131}
+  - {fileID: 3238832517037506048}
   EditorEvents:
   - {fileID: -3418056954524754455}
   - {fileID: 4898368582632189986}
@@ -6094,16 +6317,16 @@ MonoBehaviour:
   - {fileID: 7876423801043114440}
   - {fileID: -2031789574297226179}
   EditorParameters:
-  - {fileID: 1689259788707478025}
-  - {fileID: -2255985898358102263}
-  - {fileID: -5417312347216040255}
-  - {fileID: -8010337555220458949}
-  - {fileID: -3245329603570942284}
+  - {fileID: -5581955315646694554}
+  - {fileID: -6862330771488135478}
+  - {fileID: 606608379307752786}
+  - {fileID: -3151732056700936800}
+  - {fileID: 2836563789957783275}
   MasterBanks:
-  - {fileID: 586569046008592559}
+  - {fileID: 7506620586141798676}
   StringsBanks:
   - {fileID: 7527920314022502219}
-  stringsBankWriteTime: 637338123591245189
+  stringsBankWriteTime: 637337944674007784
   cacheVersion: 3
 --- !u!114 &31091304590398220
 MonoBehaviour:
@@ -6155,7 +6378,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &120290585623466204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6431,6 +6654,23 @@ MonoBehaviour:
   lastModified: 637338123591215207
   LoadResult: 0
   FileSizes: []
+  Exists: 0
+--- !u!114 &606608379307752786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Ambience Volume
+  m_EditorClassIdentifier: 
+  Name: Ambience Volume
+  Min: 0
+  Max: 1
+  Default: 0
   Exists: 1
 --- !u!114 &623761795768185414
 MonoBehaviour:
@@ -7111,7 +7351,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &1540461536376742467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7142,6 +7382,23 @@ MonoBehaviour:
   m_Name: parameter:/Grow/OverallVolume
   m_EditorClassIdentifier: 
   Name: OverallVolume
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &1619863911845948611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Grow/PlantVolume
+  m_EditorClassIdentifier: 
+  Name: PlantVolume
   Min: 0
   Max: 1
   Default: 0
@@ -7248,7 +7505,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &1690308196348876726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7283,7 +7540,7 @@ MonoBehaviour:
   lastModified: 637338123591095296
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &1769917446776325652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7594,12 +7851,12 @@ MonoBehaviour:
   Path: event:/World/Burn
   guid: 3043700209462543a8848ea8bf43e67e
   Banks:
-  - {fileID: -2745977789451691957}
+  - {fileID: 3238832517037506048}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 95305002021654698}
+  - {fileID: 9117386091708493493}
   MinDistance: 0
   MaxDistance: 0
   Length: 874
@@ -7690,7 +7947,7 @@ MonoBehaviour:
   lastModified: 637338123595981933
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &2441240723305899160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7758,7 +8015,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &2585810025769203458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7858,6 +8115,23 @@ MonoBehaviour:
   m_Name: SFX Volume
   m_EditorClassIdentifier: 
   Name: SFX Volume
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &2836563789957783275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: ReverbWet
+  m_EditorClassIdentifier: 
+  Name: ReverbWet
   Min: 0
   Max: 1
   Default: 0
@@ -8052,6 +8326,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &3238832517037506048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/World SFX.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Build/Desktop/World SFX.bank
+  SubDir: 
+  lastModified: 637337290627235399
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &3266796704390985398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8207,6 +8499,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &3436900293868079018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MainMenuMusic/MusicVolume
+  m_EditorClassIdentifier: 
+  Name: MusicVolume
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &3475243550923386632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8379,12 +8688,12 @@ MonoBehaviour:
   Path: event:/World/Ambient
   guid: 23eacf1d2d19d74992c448e1e3757f67
   Banks:
-  - {fileID: -2745977789451691957}
+  - {fileID: 3238832517037506048}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 6458456918789198667}
+  - {fileID: -2707706041840854590}
   MinDistance: 0
   MaxDistance: 0
   Length: 120400
@@ -9206,7 +9515,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &4878483082785186808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9239,13 +9548,13 @@ MonoBehaviour:
   Path: event:/Character/Footstep
   guid: fa0cac2eaf4d4041beda0cc040fda588
   Banks:
-  - {fileID: 1709512572246292683}
+  - {fileID: -482806936746304226}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 4873399349813820144}
-  - {fileID: 8827266221512293935}
+  - {fileID: -8759603483913537905}
+  - {fileID: 6624313277514876782}
   MinDistance: 0
   MaxDistance: 0
   Length: 375
@@ -9316,7 +9625,7 @@ MonoBehaviour:
   Min: 0
   Max: 4
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &4982245949289597497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9575,6 +9884,23 @@ MonoBehaviour:
   Max: 4
   Default: 0
   Exists: 1
+--- !u!114 &5457913728733429537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/FootstepLow/Grass_Stone
+  m_EditorClassIdentifier: 
+  Name: Grass_Stone
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &5466447503062519207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9731,7 +10057,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &5673260147189511187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9957,12 +10283,12 @@ MonoBehaviour:
   Path: event:/Character/Hit
   guid: f68169c0a47a1643a85a4085230f2b9e
   Banks:
-  - {fileID: 1709512572246292683}
+  - {fileID: -482806936746304226}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 1533846307939405186}
+  - {fileID: -7865830377452799544}
   MinDistance: 0
   MaxDistance: 0
   Length: 340
@@ -10050,12 +10376,12 @@ MonoBehaviour:
   Path: event:/World/DestroyPlant
   guid: cc763615350537469dcfe766f138d508
   Banks:
-  - {fileID: -2745977789451691957}
+  - {fileID: 3238832517037506048}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 6716572595956030647}
+  - {fileID: -7137483761107998477}
   MinDistance: 0
   MaxDistance: 0
   Length: 625
@@ -10231,7 +10557,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &6460157824900062086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10279,6 +10605,23 @@ MonoBehaviour:
   m_Name: parameter:/DestroyPlant/DestroyVolume
   m_EditorClassIdentifier: 
   Name: DestroyVolume
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &6624313277514876782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footstep/Grass_Stone
+  m_EditorClassIdentifier: 
+  Name: Grass_Stone
   Min: 0
   Max: 1
   Default: 0
@@ -10350,7 +10693,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &6735441285521716154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10782,6 +11125,24 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &7506620586141798676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637337290627110288
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &7527920314022502219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10796,7 +11157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637338123591245189
+  lastModified: 637337944674007784
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -11058,7 +11419,7 @@ MonoBehaviour:
   Min: -1
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &7866260376280317036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11092,12 +11453,12 @@ MonoBehaviour:
   Path: event:/MainMenuMusic
   guid: 2d6c52d6b1aa7e48b9e32c91866e1d44
   Banks:
-  - {fileID: 2424428704387021114}
+  - {fileID: -2924022997285359131}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 8528871538503657417}
+  - {fileID: 3436900293868079018}
   MinDistance: 0
   MaxDistance: 0
   Length: 140100
@@ -11413,7 +11774,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &8566293825115582051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11603,7 +11964,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &8832119352353647377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11763,6 +12124,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
+--- !u!114 &9117386091708493493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Burn/BurnVolume
+  m_EditorClassIdentifier: 
+  Name: BurnVolume
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &9123220789550337475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11780,6 +12158,23 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &9179575614092100365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Grow/OverallVolume
+  m_EditorClassIdentifier: 
+  Name: OverallVolume
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &9185930959792599606
 MonoBehaviour:
   m_ObjectHideFlags: 0
