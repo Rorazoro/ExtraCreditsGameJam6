@@ -152,6 +152,9 @@
 		<property name="length">
 			<value>0.87501133786848073</value>
 		</property>
+		<property name="volume">
+			<value>-36</value>
+		</property>
 		<relationship name="automators">
 			<destination>{572d7480-31e1-41b9-882f-36cd9010e86d}</destination>
 		</relationship>

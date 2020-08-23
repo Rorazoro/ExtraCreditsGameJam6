@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{2bea8141-b971-4b14-a490-1e0ba67ad17f}">
+		<property name="assetPath">
+			<value>Ingame - 0011 - Instrumento - Tenores.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>34.909092970521542</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{ca7d3239-fa33-4db3-99cb-37be3f6f357b}</destination>
+		</relationship>
+	</object>
+</objects>

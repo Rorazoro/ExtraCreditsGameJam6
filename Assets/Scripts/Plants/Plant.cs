@@ -55,9 +55,6 @@ public class Plant : MonoBehaviour, IInteractable {
 
         SetStageSprite (stage);
         isGrowing = true;
-
-        pAudio.growth = stage + 1;
-        pAudio.prevGrowth = stage + 1;
     }
 
     public void DoInteraction () {
@@ -76,16 +73,14 @@ public class Plant : MonoBehaviour, IInteractable {
         } else {
             stage++;
             SetStageSprite (stage);
+
+            pAudio.Grow ();
         }
         growthTimeMax = plantData.baseGrowthTime * 10 * (stage + 1);
         growthTime = 0;
-
-        //Match Growth with audio
-        pAudio.growth = stage + 1;
     }
 
     public void CutPlant () {
-        //Debug.Log ($"Plant Cut!");
         growthTime = 0;
         stage = 0;
         col2d.enabled = false;
@@ -98,6 +93,8 @@ public class Plant : MonoBehaviour, IInteractable {
         if (isPillarPlant) {
             pillar.DecreaseOvergrowth ();
         }
+
+        pAudio.Cut ();
     }
 
     public void SpreadPlants () {

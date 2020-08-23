@@ -8,6 +8,7 @@ public class GameAudio : MonoBehaviour
     public Slider ambienceSlider;
     public Slider musicSlider;
     public Slider SFXSlider;
+    public Slider musicIntensitySlider;
 
     public FMODUnity.StudioEventEmitter ambience;
     public FMODUnity.StudioEventEmitter music;
@@ -23,6 +24,7 @@ public class GameAudio : MonoBehaviour
     public float ambienceVolume;
     public float musicVolume;
     public float sfxVolume;
+    public float musicIntensity;
 
     // Start is called before the first frame update
     void Awake()
@@ -40,8 +42,9 @@ public class GameAudio : MonoBehaviour
         musicVolume = musicSlider.value;
         ambienceVolume = ambienceSlider.value;
         sfxVolume = SFXSlider.value;
+        musicIntensity = musicIntensitySlider.value;
 
-        music.SetParameter("Volume", musicVolume);
+        music.SetParameter("IngameMusicVolume", musicVolume);
         ambience.SetParameter("Volume", ambienceVolume);
 
         foreach(GameObject go in plants)
@@ -51,6 +54,8 @@ public class GameAudio : MonoBehaviour
             go.GetComponent<PlantAudio>().cut.SetParameter("DestroyVolume", sfxVolume);
         }
         player.GetComponentInChildren<CharacterAudio>().Volume = sfxVolume;
+
+        music.SetParameter("MusicIntensity", musicIntensity);
 
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ReverbTime", ReverbTime);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ReverbWet", ReverbWet);
