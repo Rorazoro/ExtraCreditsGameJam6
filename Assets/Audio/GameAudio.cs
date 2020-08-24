@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameAudio : MonoBehaviour
-{
+public class GameAudio : MonoBehaviour {
     public Slider ambienceSlider;
     public Slider musicSlider;
     public Slider SFXSlider;
@@ -16,9 +15,9 @@ public class GameAudio : MonoBehaviour
     private GameObject player;
     private GameObject[] plants;
 
-    [Range(0,1)]
+    [Range (0, 1)]
     public float ReverbTime = 0;
-    [Range(0, 1)]
+    [Range (0, 1)]
     public float ReverbWet = 0;
 
     public float ambienceVolume;
@@ -27,37 +26,38 @@ public class GameAudio : MonoBehaviour
     public float musicIntensity;
 
     // Start is called before the first frame update
-    void Awake()
-    {
-        ambience.Play();
-        music.Play();
+    void Awake () {
+        ambience.Play ();
+        music.Play ();
 
-        player = GameObject.FindWithTag("Player");
-        plants = GameObject.FindGameObjectsWithTag("MultiInteractable");
+        player = GameObject.FindWithTag ("Player");
+        plants = GameObject.FindGameObjectsWithTag ("MultiInteractable");
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        musicVolume = musicSlider.value;
-        ambienceVolume = ambienceSlider.value;
-        sfxVolume = SFXSlider.value;
-        musicIntensity = musicIntensitySlider.value;
+    void Update () {
+        musicVolume = PlayerPrefs.GetFloat ("MVol", 1);
+        ambienceVolume = PlayerPrefs.GetFloat ("AmbVol", 1);
+        sfxVolume = PlayerPrefs.GetFloat ("SFXVol", 1);
 
-        music.SetParameter("IngameMusicVolume", musicVolume);
-        ambience.SetParameter("Volume", ambienceVolume);
+        musicSlider.value = musicVolume;
+        ambienceSlider.value = ambienceVolume;
+        SFXSlider.value = sfxVolume;
+        musicIntensitySlider.value = 0;
 
-        foreach(GameObject go in plants)
-        {
-            go.GetComponent<PlantAudio>().grow.SetParameter("OverallVolume", sfxVolume);
-            go.GetComponent<PlantAudio>().burn.SetParameter("BurnVolume", sfxVolume);
-            go.GetComponent<PlantAudio>().cut.SetParameter("DestroyVolume", sfxVolume);
+        music.SetParameter ("IngameMusicVolume", musicVolume);
+        ambience.SetParameter ("Volume", ambienceVolume);
+
+        foreach (GameObject go in plants) {
+            go.GetComponent<PlantAudio> ().grow.SetParameter ("OverallVolume", sfxVolume);
+            go.GetComponent<PlantAudio> ().burn.SetParameter ("BurnVolume", sfxVolume);
+            go.GetComponent<PlantAudio> ().cut.SetParameter ("DestroyVolume", sfxVolume);
         }
-        player.GetComponentInChildren<CharacterAudio>().Volume = sfxVolume;
+        player.GetComponentInChildren<CharacterAudio> ().Volume = sfxVolume;
 
-        music.SetParameter("MusicIntensity", musicIntensity);
+        music.SetParameter ("MusicIntensity", musicIntensity);
 
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ReverbTime", ReverbTime);
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ReverbWet", ReverbWet);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName ("ReverbTime", ReverbTime);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName ("ReverbWet", ReverbWet);
     }
 }

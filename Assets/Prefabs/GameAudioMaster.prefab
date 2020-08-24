@@ -45,10 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d8c4ae21b4adae49ab857917f2705c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ambienceSlider: {fileID: 0}
-  musicSlider: {fileID: 0}
-  SFXSlider: {fileID: 0}
-  musicIntensitySlider: {fileID: 0}
   ambience: {fileID: 5909885932460913885}
   music: {fileID: 5909885932460913884}
   ReverbTime: 0.25
