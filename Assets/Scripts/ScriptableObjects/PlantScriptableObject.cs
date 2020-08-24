@@ -6,4 +6,8 @@ public class PlantScriptableObject : ScriptableObject {
     public int maxHealth;
     public int health;
     public float baseGrowthTime;
+
+    public PlantType plantType;
+
+    public Sprite[] stageSprites = new Sprite[4];
 }

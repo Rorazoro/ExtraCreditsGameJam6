@@ -144,18 +144,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantData: {fileID: 11400000, guid: 62ae1b9569f3e2f40b90d4ae666698dc, type: 2}
-  growthTime: 0
-  growthTimeMax: 0
   isGrowing: 0
   stage: 0
-  isSuperPlant: 0
-  neighbours: []
   col2d: {fileID: 8545703397644716296}
-  stageSprites:
-  - {fileID: 3985221016008397036, guid: 5e9f916b1347a7a43b01553803e3d383, type: 3}
-  - {fileID: 3885819281616729284, guid: 5e9f916b1347a7a43b01553803e3d383, type: 3}
-  - {fileID: -6017339223957375553, guid: 5e9f916b1347a7a43b01553803e3d383, type: 3}
-  - {fileID: 293392773991598977, guid: 5e9f916b1347a7a43b01553803e3d383, type: 3}
   pAudio: {fileID: 704707018}
 --- !u!114 &704707018
 MonoBehaviour:

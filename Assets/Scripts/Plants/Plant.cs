@@ -10,16 +10,13 @@ using UnityEngine.Tilemaps;
 public class Plant : MonoBehaviour, IInteractable {
 
     public PlantScriptableObject plantData;
-    public float growthTime;
-    public float growthTimeMax;
+    private float growthTime;
+    private float growthTimeMax;
     public bool isGrowing = false;
     public int stage;
-    public bool isSuperPlant;
-    public bool isPillarPlant;
     private Pillar pillar;
-    public List<Plant> neighbours = new List<Plant> ();
+    private List<Plant> neighbours = new List<Plant> ();
     public Collider2D col2d;
-    public Sprite[] stageSprites;
 
     private SpriteRenderer spriteRenderer;
 
@@ -31,12 +28,12 @@ public class Plant : MonoBehaviour, IInteractable {
         spriteRenderer = GetComponent<SpriteRenderer> ();
         col2d.enabled = false;
 
-        if (isPillarPlant) {
+        if (plantData.plantType == PlantType.Pillar) {
             FindPillar ();
         }
         FindNeighbours ();
 
-        if (isSuperPlant) {
+        if (plantData.plantType == PlantType.Super) {
             InitializePlant (3);
         }
     }
@@ -70,7 +67,7 @@ public class Plant : MonoBehaviour, IInteractable {
 
     public void GrowPlant () {
         if (stage == 3) {
-            if (isPillarPlant) {
+            if (plantData.plantType == PlantType.Pillar) {
                 pillar.IncreaseOvergrowth ();
             }
             SpreadPlants ();
@@ -91,10 +88,10 @@ public class Plant : MonoBehaviour, IInteractable {
         SetStageSprite (stage);
         isGrowing = false;
 
-        if (isSuperPlant) {
+        if (plantData.plantType == PlantType.Super) {
             InitializePlant (0);
         }
-        if (isPillarPlant) {
+        if (plantData.plantType == PlantType.Pillar) {
             pillar.DecreaseOvergrowth ();
         }
 
@@ -142,7 +139,7 @@ public class Plant : MonoBehaviour, IInteractable {
     private void SetStageSprite (int stage) {
         float alpha = stage > 0 ? 255f : 0f;
 
-        spriteRenderer.sprite = stageSprites[stage];
+        spriteRenderer.sprite = plantData.stageSprites[stage];
         spriteRenderer.color = new Color (spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, alpha);
     }
 }

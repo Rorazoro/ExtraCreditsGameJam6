@@ -63,5 +63,9 @@ PrefabInstance:
       propertyPath: isSuperPlant
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8545703397644716294, guid: 846b84a7cf4a04240886cfd38c1062c9, type: 3}
+      propertyPath: plantData
+      value: 
+      objectReference: {fileID: 11400000, guid: 0fcb7d55e40a1af4eb7d962a7bda39de, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 846b84a7cf4a04240886cfd38c1062c9, type: 3}

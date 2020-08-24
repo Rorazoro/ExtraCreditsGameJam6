@@ -10,8 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 553d9898905d3e34f96263c7a7ca471b, type: 3}
-  m_Name: BasicPlant
+  m_Name: SuperPlant
   m_EditorClassIdentifier: 
   maxHealth: 1
   health: 1
-  baseGrowthTime: 1
+  baseGrowthTime: 5
+  plantType: 0
+  stageSprites:
+  - {fileID: -1385786070971223102, guid: 5e9f916b1347a7a43b01553803e3d383, type: 3}
+  - {fileID: 3885819281616729284, guid: 5e9f916b1347a7a43b01553803e3d383, type: 3}
+  - {fileID: -6017339223957375553, guid: 5e9f916b1347a7a43b01553803e3d383, type: 3}
+  - {fileID: 293392773991598977, guid: 5e9f916b1347a7a43b01553803e3d383, type: 3}
