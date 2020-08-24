@@ -3,6 +3,6 @@ using UnityEngine;
 
 public class DialogueBox : MonoBehaviour {
     public void CloseDialogue () {
-        DialogueManager.Instance.DisplayNextSentence ();
+        //DialogueManager.Instance.DisplayNextSentence ();
     }
 }

@@ -18,7 +18,8 @@ public class Pillar : MonoBehaviour {
         if (overgrownStage >= overgrownMaxStage && !isOvergrown) {
             spriteRenderer.sprite = overgrownSprite;
             isOvergrown = true;
-            LevelManager.Instance.IncreaseOvergrowth ();
+            LevelManager levelManager = GameObject.Find ("LevelManager").GetComponent<LevelManager> ();
+            levelManager.IncreaseOvergrowth ();
         }
     }
 

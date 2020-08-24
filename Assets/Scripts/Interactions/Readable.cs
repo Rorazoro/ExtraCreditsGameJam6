@@ -6,7 +6,7 @@ using UnityEngine;
 public class Readable : MonoBehaviour, IInteractable {
     public Dialogue dialogue;
     public void DoInteraction () {
-        DialogueManager.Instance.StartDialogue (dialogue);
+        //DialogueManager.Instance.StartDialogue (dialogue);
         gameObject.SetActive (false);
     }
 }
