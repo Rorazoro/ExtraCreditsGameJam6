@@ -10,6 +10,7 @@ public class PlayerInputHandler : IInputHandler {
     private InputAction inputAction;
 
     public Vector2 movement { get; private set; }
+    public Vector2 look { get; private set; }
     public Vector2 navigate { get; private set; }
     public bool isInteraction { get; private set; }
     public bool isCut { get; private set; }
@@ -45,6 +46,10 @@ public class PlayerInputHandler : IInputHandler {
             switch (inputAction.name) {
                 case "Move":
                     movement = inputAction.ReadValue<Vector2> ();
+                    isInputBound = true;
+                    break;
+                case "Look":
+                    look = inputAction.ReadValue<Vector2> ();
                     isInputBound = true;
                     break;
                 case "Navigate":

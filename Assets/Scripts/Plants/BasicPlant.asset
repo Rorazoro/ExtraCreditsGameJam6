@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1
   health: 1
-  baseGrowthTime: 3
+  baseGrowthTime: 10
   plantType: 2
   stageSprites:
   - {fileID: -1385786070971223102, guid: 5e9f916b1347a7a43b01553803e3d383, type: 3}

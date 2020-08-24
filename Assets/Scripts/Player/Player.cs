@@ -1,4 +1,5 @@
-﻿using Assets.Interfaces;
+﻿using System;
+using Assets.Interfaces;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,6 +11,7 @@ namespace Assets.Entities {
         public Animator slashAnimator;
 
         public GameObject AudioManager;
+        public GameObject SlashObject;
         private SpriteRenderer spriteRenderer = null;
         private Rigidbody2D rb = null;
 
@@ -40,12 +42,12 @@ namespace Assets.Entities {
         private void FixedUpdate () {
             entityMotor.Tick ();
             playerInteractHandler.Tick ();
-            playerCutHandler.Tick (gameObject.transform.position);
+            playerCutHandler.Tick (SlashObject.transform);
 
             if (playerInputHandler.isCut) {
                 //Cut (For now)
                 slashAnimator.SetTrigger ("Cut");
-                //AudioManager.GetComponent<CharacterAudio> ().Cut ();
+                AudioManager.GetComponent<CharacterAudio> ().Cut ();
             }
             if (playerInputHandler.movement != new Vector2 (0, 0)) {
                 anim.SetBool ("Moving", true);

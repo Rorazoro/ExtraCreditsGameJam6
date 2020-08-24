@@ -16,7 +16,7 @@ public class LevelManager : MonoBehaviour {
 
     private void Awake () {
         pillars = FindObjectsOfType<Pillar> ();
-        MaxPillarOvergrowth = pillars.Length / 2;
+        MaxPillarOvergrowth = pillars.Length;
     }
 
     private void Update () {
