@@ -31250,6 +31250,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pillars: []
+  randomPlants:
+  - {fileID: 11400000, guid: 08a3296c4b491b647aa32c7b9ba824a1, type: 2}
   MaxPillarOvergrowth: 0
   PillarOvergrowth: 0
   isGameOver: 0

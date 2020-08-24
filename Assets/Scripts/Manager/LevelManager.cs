@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using Assets.Managers;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -7,6 +8,7 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour {
     public Pillar[] pillars;
+    public List<PlantScriptableObject> randomPlants;
 
     public int MaxPillarOvergrowth;
     public int PillarOvergrowth;

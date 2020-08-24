@@ -33,7 +33,7 @@ namespace Assets.Entities {
             rb = GetComponent<Rigidbody2D> ();
             playerInput = GetComponent<PlayerInput> ();
 
-            playerInputHandler = new PlayerInputHandler (playerInput);
+            playerInputHandler = new PlayerInputHandler (playerInput, slashAnimator, AudioManager, playerCutHandler);
             entityMotor = new EntityMotor (playerInputHandler, rb, speed);
             playerInteractHandler = new PlayerInteractHandler (playerInputHandler);
             playerCutHandler = new PlayerCutHandler (playerInputHandler);
@@ -44,11 +44,6 @@ namespace Assets.Entities {
             playerInteractHandler.Tick ();
             playerCutHandler.Tick (SlashObject.transform);
 
-            if (playerInputHandler.isCut) {
-                //Cut (For now)
-                slashAnimator.SetTrigger ("Cut");
-                AudioManager.GetComponent<CharacterAudio> ().Cut ();
-            }
             if (playerInputHandler.movement != new Vector2 (0, 0)) {
                 anim.SetBool ("Moving", true);
             } else {

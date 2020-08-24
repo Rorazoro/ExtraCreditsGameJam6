@@ -9,6 +9,10 @@ public class PlayerInputHandler : IInputHandler {
     private PlayerInput playerInput;
     private InputAction inputAction;
 
+    private Animator slashAnim;
+    private GameObject audioManager;
+    private PlayerCutHandler playerCutHandler;
+
     public Vector2 movement { get; private set; }
     public Vector2 look { get; private set; }
     public Vector2 navigate { get; private set; }
@@ -20,9 +24,13 @@ public class PlayerInputHandler : IInputHandler {
 
     //public event EventHandler OnInput;
 
-    public PlayerInputHandler (PlayerInput input) {
+    public PlayerInputHandler (PlayerInput input, Animator slashAnimator, GameObject audioManager, PlayerCutHandler playerCutHandler) {
         playerInput = input;
         playerInput.onActionTriggered += Input_OnActionTriggered;
+
+        this.slashAnim = slashAnimator;
+        this.audioManager = audioManager;
+        this.playerCutHandler = playerCutHandler;
     }
 
     private void Input_OnActionTriggered (InputAction.CallbackContext context) {
@@ -63,6 +71,8 @@ public class PlayerInputHandler : IInputHandler {
                 case "Fire":
                     isCut = inputAction.triggered;
                     isInputBound = true;
+                    slashAnim.SetTrigger ("Cut");
+                    audioManager.GetComponent<CharacterAudio> ().Cut ();
                     break;
             }
 

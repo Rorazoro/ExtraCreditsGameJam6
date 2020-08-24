@@ -36,6 +36,13 @@ public class Plant : MonoBehaviour, IInteractable {
         if (plantData.plantType == PlantType.Super) {
             InitializePlant (3);
         }
+
+        // if (UnityEngine.Random.value > 0.9) {
+        //     LevelManager levelManager = GameObject.Find ("LevelManager").GetComponent<LevelManager> ();
+        //     var random = new System.Random ();
+        //     int index = random.Next (levelManager.randomPlants.Count);
+        //     plantData = levelManager.randomPlants[index];
+        // }
     }
 
     private void Update () {

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Pillar : MonoBehaviour {
     public int overgrownStage;
-    public int overgrownMaxStage = 6;
+    public int overgrownMaxStage = 9;
     public bool isOvergrown;
     public Sprite overgrownSprite;
 
