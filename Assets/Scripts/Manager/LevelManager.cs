@@ -32,6 +32,7 @@ public class LevelManager : MonoBehaviour {
         StopAllPlantGrowth ();
         //StopPlayerMovement ();
         isGameOver = true;
+        Cursor.visible = true;
         FadeInEndGameDialogue ();
     }
 
