@@ -1,5 +1,4 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 26c5121ea82cd9349ab1e0ea309b9518
 TextureImporter:
   internalIDToNameTable:
@@ -24,11 +23,12 @@ TextureImporter:
   - first:
       213: 6256677164304553092
     second: ui_buttons_6
-=======
-guid: 303bff847d11a854b87b89de38ff7c92
-TextureImporter:
-  internalIDToNameTable: []
->>>>>>> d65026d440d5376b885bad99f8433dc1e187db5b
+  - first:
+      213: -322852471243324048
+    second: ui_buttons_7
+  - first:
+      213: 6463001326669437257
+    second: ui_buttons_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -59,33 +59,21 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-<<<<<<< HEAD
     filterMode: 0
-=======
-    filterMode: -1
->>>>>>> d65026d440d5376b885bad99f8433dc1e187db5b
     aniso: -1
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-<<<<<<< HEAD
   spriteMode: 2
-=======
-  spriteMode: 1
->>>>>>> d65026d440d5376b885bad99f8433dc1e187db5b
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
   spritePixelsToUnits: 8
-=======
-  spritePixelsToUnits: 100
->>>>>>> d65026d440d5376b885bad99f8433dc1e187db5b
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -98,14 +86,13 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-<<<<<<< HEAD
     textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
@@ -119,9 +106,6 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
-=======
-    textureCompression: 1
->>>>>>> d65026d440d5376b885bad99f8433dc1e187db5b
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -130,7 +114,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-<<<<<<< HEAD
     sprites:
     - serializedVersion: 2
       name: ui_buttons_0
@@ -178,7 +161,7 @@ TextureImporter:
       name: ui_buttons_2
       rect:
         serializedVersion: 2
-        x: 48
+        x: 72
         y: 32
         width: 8
         height: 8
@@ -199,7 +182,7 @@ TextureImporter:
       name: ui_buttons_3
       rect:
         serializedVersion: 2
-        x: 48
+        x: 72
         y: 16
         width: 8
         height: 8
@@ -262,7 +245,7 @@ TextureImporter:
       name: ui_buttons_6
       rect:
         serializedVersion: 2
-        x: 48
+        x: 72
         y: 0
         width: 8
         height: 8
@@ -279,9 +262,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-=======
-    sprites: []
->>>>>>> d65026d440d5376b885bad99f8433dc1e187db5b
+    - serializedVersion: 2
+      name: ui_buttons_7
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 24
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0754fa0536ff48bf0800000000000000
+      internalID: -322852471243324048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_buttons_8
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9499203d67131b950800000000000000
+      internalID: 6463001326669437257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
