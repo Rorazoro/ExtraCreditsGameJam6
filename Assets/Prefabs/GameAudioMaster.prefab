@@ -45,6 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d8c4ae21b4adae49ab857917f2705c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ambienceSlider: {fileID: 0}
+  musicSlider: {fileID: 0}
+  SFXSlider: {fileID: 0}
+  musicIntensitySlider: {fileID: 0}
   ambience: {fileID: 5909885932460913885}
   music: {fileID: 5909885932460913884}
   ReverbTime: 0.25
@@ -66,7 +70,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/World/Ambient
+  EventReference:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: event:/World/Ambient
+  Event: 
   PlayEvent: 0
   StopEvent: 0
   AllowFadeout: 1
@@ -89,6 +100,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   Event: 
   PlayEvent: 0
   StopEvent: 0

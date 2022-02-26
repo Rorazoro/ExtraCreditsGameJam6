@@ -99,10 +99,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   growth: 0
+  prevGrowth: 0
   max: 8
   grow: {fileID: 1072863917775290353}
   burn: {fileID: 1072863917775290352}
-  nextGrowthSpeed: 1
+  cut: {fileID: 0}
 --- !u!114 &1072863917775290353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,7 +117,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/World/Grow
+  EventReference:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: event:/World/Grow
+  Event: 
   PlayEvent: 0
   StopEvent: 0
   AllowFadeout: 1
@@ -139,7 +147,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionTag: 
-  Event: event:/World/Burn
+  EventReference:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: event:/World/Burn
+  Event: 
   PlayEvent: 0
   StopEvent: 0
   AllowFadeout: 1
